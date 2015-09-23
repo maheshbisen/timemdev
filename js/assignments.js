@@ -111,7 +111,7 @@ $(document).ready(function(){
 		var username = array[0];*/
 		//Taking complete cookie string as a username, needs to send username specific  cookie only
 		var username = getCookie("username");
-		alert(username);
+		alert(uname);
 		return username;
 	}
 
