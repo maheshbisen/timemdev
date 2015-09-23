@@ -176,6 +176,7 @@ $(document).ready(function(){
 
   //Makes the Assignment list by searching for items in parse given the username
   var makeAssignmentList = function(username){
+  	alert(username);
 	var totAssignmentTime = 0;
     var query = new Parse.Query("Assignment");
     //console.log(query);
