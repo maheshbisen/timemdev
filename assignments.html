@@ -330,11 +330,11 @@
     <div class="extraPersonTemplate">
       <div class="controls controls-row">
         <!-- Input for the assignment on the assignments page -->
-        <paper-input id="assignment" class="assignmentInput ColorWhite" placeholder="Assignment Name" type="text" name="assignment" ></paper-input>
+        <paper-input id="assignment1" class="assignmentInput ColorWhite ColorWhitefont " placeholder="Assignment Name" type="text" name="assignment" ></paper-input>
         <!-- Input for the minutes on the assignments page -->
-        <paper-input id="mins" placeholder="Minutes" type="text" name="mins" class="ColorWhite"></paper-input>
+        <paper-input id="mins" placeholder="Minutes" type="text" name="mins" class="ColorWhite ColorWhitefont "></paper-input>
         <!-- Submit button for assignments page -->
-        <input id="addNewAssignment" class="submit" type="submit" value="Submit">
+        <input id="addNewAssignment" class="submit submitbtn" type="submit" value="Submit">
       </div>
     </div>
     <div id="container"></div>
@@ -361,22 +361,27 @@
   <!-- PARSE JAVA SCRIPT ===================================================================================-->
   <div id="addMinutes"  style ="font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none;  text-align: center; display: none"> <strong> &nbsp; Add Minutes! </strong> </div>
   <!-- Add minutes buttons -->
-  <div id="addMinutesButton" class="page-wrap" style = "position: relative; top: 80px; text-align: center; display: none">
+  <div id="addMinutesButton" class="page-wrap" style = "position: relative;  text-align: center; display: none">
     <nav>
       <ul class="nav">
-        <li><a href="javascript:void(0);" class="icon-home btnIncrementTime" data-min="5" onClick="document.querySelector('#toast2').show()" ></a></li>
+        <li><a href="javascript:void(0);" class="icon-home btnIncrementTime" data-min="5" onClick="document.querySelector('#toast2').show()" ><span class="addminincercle">1 min</span></a></li>
         <paper-toast id="toast2" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 Minute Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
-        <li><a href="javascript:void(0);" id="15min" class="icon-cog btnIncrementTime" data-min="15" onClick="document.querySelector('#toast3').show()"></a></li>
+        <li><a href="javascript:void(0);" id="15min" class="icon-cog btnIncrementTime" data-min="15" onClick="document.querySelector('#toast3').show()"><span class="addminincercle">5 min</span></a></li>
         <paper-toast id="toast3" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
-        <li><a href="javascript:void(0);" class="icon-cw btnIncrementTime" data-min="30" onClick="document.querySelector('#toast4').show()"></a></li>
+        <li><a href="javascript:void(0);" class="icon-cw btnIncrementTime" data-min="30" onClick="document.querySelector('#toast4').show()"><span class="addminincercle">15 min</span></a></li>
         <paper-toast id="toast4" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 15 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
-        <li><a href="javascript:void(0);" class="icon-location btnIncrementTime" data-min="60" onClick="document.querySelector('#toast5').show()"></a></li>
+        <li><a href="javascript:void(0);" class="icon-location btnIncrementTime" data-min="60" onClick="document.querySelector('#toast5').show()"><span class="addminincercle">30 min</span></a></li>
         <paper-toast id="toast5" text="&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 30 Minutes Added." style= "font-family: 'Roboto', sans-serif; font-size: 20px;"></paper-toast>
       </ul>
     </nav>
   </div>
   <!-- End add minutes buttons -->
 </div>
+<!--<div class="footerassignmet">
+<div class="footercontwrap">
+	<div class="ftrlogoimg"><img src="images/footer-logo.gif"></div><div class="" 
+</div>
+</div>-->
 <!--<iframe class="iframeFooter"scrolling="no" src="footerMain/main.html"></iframe>-->
 </body>
 <script type="text/javascript" src="js/toggle.js"></script>
