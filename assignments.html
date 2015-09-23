@@ -55,7 +55,7 @@
   <!-- Polymer dialog ======================================================================================-->
   <paper-dialog heading="Settings" transition="paper-dialog-transition-center"  class ="setting">
     <!-- Wake Up time input -->
-    <div class="wakeUpHeading"><strong>When I need to get up for school:</strong></div>
+    <div class="wakeUpHeading">When I need to get up for school:</div>
     <div class="wakeupDiv">
       <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
         <option value="off">OFF</option>
@@ -84,6 +84,7 @@
         <option value="23"> 11 PM</option>
         <option value="0">12 AM</option>
       </select>
+      
       <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
         <option value="0">00</option>
         <option value="1">01</option>
@@ -147,7 +148,7 @@
         <option value="59">59</option>
       </select>
     </div>
-    <div class="startTimeWork"> <strong>When I will start on homework: </strong> </div>
+    <div class="startTimeWork">When I will start on homework:</div>
     <div class="wakeupDiv">
       <select id="startWorkHr" name="startwork_hour" title="Start Work Hour" class="startWorkHour">
         <option value="off">OFF</option>
@@ -240,7 +241,7 @@
       </select>
     </div>
     <div class="wakeupDiv">
-      <div class="otherActivities"><strong> Other Activities: </strong></div>
+      <div class="otherActivities"> Other Activities: </div>
       <!-- Activites hours -->
       <select id="extraHR" name="other_activities_hours" title="Activities Hour">
         <option value="">OFF</option>
@@ -319,9 +320,11 @@
         <option value="59">59 min</option>
       </select>
     </div>
-    <paper-checkbox id="statusSleepCalculator" role="checkbox" tabindex="0" aria-checked="false" checked=""></paper-checkbox>
+    <div class="chekbox-correct">
+    <paper-checkbox id="statusSleepCalculator" role="checkbox" tabindex="0" aria-checked="false" checked=""></paper-checkbox></div>
     <div class="sleepCalcTitle"> <strong> Turn On Sleep Calculator? </strong> </div>
-    <paper-button id="saveButton"label="Save" onclick="document.querySelector('#toast1').show()"></paper-button>
+    
+    <paper-button id="saveButton"label="Save" class="saveButtonnone"   onclick="document.querySelector('#toast1').show()"></paper-button>
     <paper-toast id="toast1" text="Your selections have been saved."></paper-toast>
   </paper-dialog>
   <!-- End Paper Dialog ================================================================================= -->
@@ -383,6 +386,19 @@
 </div>
 </div>-->
 <!--<iframe class="iframeFooter"scrolling="no" src="footerMain/main.html"></iframe>-->
+<footer>
+  <!-- Script for scroll up feature -->
+  <div id="myCanvasContact">
+    <div class="footer">
+      <ul>
+        <li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li>
+        <li><a href="contactus.html"><i class="ion-android-social"></i><span>Contact Us</span></a></li>
+        <li><a href= "howitworks.html"><i class="ion-help-buoy"></i><span>How it Works</span></a></li>
+      </ul>
+      <div class="ftTime"><a href="index.html">TimeM.com</a></div>
+    </div>
+  </div>
+</footer>
 </body>
 <script type="text/javascript" src="js/toggle.js"></script>
 <!-- Placed at the end of the document so the pages load faster -->
