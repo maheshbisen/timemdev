@@ -636,26 +636,19 @@ hr.style-one {
 }
 /*This is the wake up hour dropdown*/
 .wakeUpHour {
-	width: 130px;
-	height: 45px;
+	width: 90px;
+	height: 50px;
 	font-size: 18px;
 	float:left;
-	padding:2px; 
-	border-radius:3px;
-	background-color:#f8f8f8; 
-	border:none; 
+	padding:2px;
 }
 /*This is the the wake up minute dropdown*/
 .wakeUpMinutes {
-	width: 130px;
-	height: 45px;
+	width: 90px;
+	height: 50px;
 	float:right;
 	font-size: 18px;
 	padding:2px;
-	border-radius:3px; 
-	background-color:#f8f8f8;
-	border:none;   
-	
 }
 /*This is the sleep calculator title*/
 .sleepCalcTitle {
@@ -665,8 +658,7 @@ hr.style-one {
   left: 150px; 
   top: 415px;*/
   margin-top:0px;
-	margin-bottom:10px; 
-	margin-right:93px;
+	margin-bottom:10px;
 }
 paper-dialog {
 	width: 500px;
@@ -796,14 +788,14 @@ label {
 
 .otherActivities {
 	color:#000000;
-	font-size: 18px;
+	font-size: 22px;
 	float:left;
-	width:341px;
+	width:264px;
 }
 .and {
 color:color: #000;
 	font-size: 22px;
-	width: 25%;
+	width: 17%;
 	float: left;
 	margin-top:0px;
 	margin-bottom:18px;
@@ -816,28 +808,22 @@ color:color: #000;
 	border-radius:5px;
 }
 #extraHR {
-	width:130px;
-	height: 45px;
+	width:90px;
+	height: 50px;
 	float:left;
 	font-size: 15px;
-	padding:2px; background-color:#f8f8f8; 
-	border-radius:3px;
-	border:none; 
+	padding:2px;
 }
 #extraMin {
-	width:130px;
-	height:45px;
+	width: 90px;
+	height: 50px;
 	float:right;
 	font-size: 15px;
 	padding:2px;
-	background-color:#f8f8f8; 
-	border-radius:3px;
-	border:none; 
 }
 .setting {
 	text-align: center;
-	font-size:18px; 
-	width:100%; max-width:550px;
+	font-size:18px;
 }
 #toast1 {
 	font-family: 'Roboto', sans-serif;
@@ -893,32 +879,23 @@ paper-button #icon {
 	font-size:22px;
 }
 .wakeupDiv {
-	/*width:50%;
+	width:50%;
 	float:left;
-	margin:0px 25% 3%;*/
-	width: 72%;
-    float: left;
-    margin: 0px 13% 3%;
+	margin:0px 25% 3%;
 }
 .startWorkHour {
-	width: 130px;
-	height: 45px;
+	width: 90px;
+	height: 50px;
 	font-size: 18px;
 	float: left;
-	padding: 2px; 
-	border-radius:3px; 
-	background-color: #f8f8f8;
-	border:none; 
+	padding: 2px;
 }
 .startWorkMin {
-	width: 130px;
-	height: 45px;
+	width: 90px;
+	height: 50px;
 	font-size: 18px;
 	float: right;
 	padding: 2px;
-	border-radius:3px; 
-	background-color: #f8f8f8;
-	border:none; 
 }
 .addAssignment {
 	max-width:1100px;
@@ -926,19 +903,15 @@ paper-button #icon {
 	margin:100px auto 0px;
 }
 .extraPersonTemplate {
-	width:75%;
+	width:60%;
 	margin:30px auto;
 }
 #mins {
-	width:15%;
+	width:30%;
 	margin:0 auto;
 	font-family: 'Raleway';
 	color:#999;
-	font-size: 14px; margin-left:12%;
-}
-#assignment1{
-width:25%;
-
+	font-size: 14px;
 }
 /*.controls-row {
 	background:#fff;
@@ -1513,88 +1486,4 @@ section {
 }
  paper-checkbox.blue::shadow #checkbox.checked {
  border-color: #4285f4;
-}
-
-.carousel-caption .CarouselSecondhead{
-	color:#fff; 
-	font-size:40px; 	
-}
-.border-sep{ 
-	border:1px solid #fff; 
-	margin:30px 0px 30px 0px;
-}
-.SignUpbtn{ 
-	width:186px; 
-	height:48px;
-	border:2px solid #fff; 
-	border-radius:2px; 
-	background:none; 
-	padding:10px; 
-}
-.SignUpbtn:hover{ 
-	background:none!important; 
-	color:#fff;  
-}
-.submitbtn{
-	width:186px!important; 
-	height:43px;
-	border:2px solid #fff; 
-	border-radius:2px; 
-	background:none; 
-	padding:10px; 
-}
-.submitbtn:hover{
-	background:none!important; 
-	color:#fff; 
-	} 
-.ColorWhitefont{
-	 font-size:18px!important;
-} 
-.footerassignmet{ 
-	background-color:#000; 
-	width:100%; 
-	height:200px;
-}
-.footercontwrap{ 
-	max-width:1100px!important; 
-	margin:auto;   
-}
-.ftrlogoimg{ margin-top:50px;
-}
-.nav >li a{ 
-	background:url(../images/addmin.png) no-repeat; 
-	height:214px; width:202px; float:left; 
-	margin-right:70px;
-}
-.nav{ 
-	max-width:1100px; 
-	margin:0 auto;
-	width:100%;
-}
-.nav >li a:hover{ 
-	background:url(../images/addmin.png) no-repeat; background-color:none !important;
-}
-.nav >li a:focus{ 
-	background:url(../images/addmin.png) no-repeat; background-color:none !important;
-}
-a span.addminincercle{ 
-	margin-top:48px; 
-	padding:40px; 
-	display:inline-block; 
-	color:#a7a7a7; 
-	font-size:18px;
-}
-a span.addminincercle:hover{
-	color:#555555;
-}
-a span.addminincercle:focus{
-	color:#555555;
-}
-.chekbox-correct{ 
-	float:left; 
-	margin-left:131px;
-}
-.saveButtonnone{ 
-	float:right; 
-	background:none!important; color:#5e7ac2!important;
 }
