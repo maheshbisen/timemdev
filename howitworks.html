@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/carousel.css" rel="stylesheet">
+<!-- Fonts and style sheet for the rest of the landingpage -->
+<!--	<link rel="stylesheet" type="text/css" href="css/howitworks.css">-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+<link rel="icon" href="images/favicon.png">
+<link href="components/paper-input/paper-input.html" rel="import">
+<!-- IonIcons -->
+<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+<title>Home | TimeM</title>
+<!-- Background image -->
+<!--
+	<img src="images/mainbackground.jpg" class="bg">-->
+</head>
+<body class="bgIndex">
+<!-- Main menu (top menu) ====================================================-->
+<div class="headerWrap">
+  <div id="fixedNav">
+    <div id='header_top_left' class="active"> <a href = "index.html"> TimeM </a> </div>
+    <div id='cssmenu'>
+      <ul>
+        <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>
+        <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>
+        <li class='active'> <a href='#'> <span class = 'login'><i class="ion-android-social-user"></i><strong> &nbsp; Login </strong></span> </a>
+          <ul class='dropdown'>
+            <form name = "myform">
+              <p>
+                <center>
+                  Login:
+                </center>
+                <paper-input keys="enter" label="Email" id="username" type="text" name=" username" class="Contactbox"></paper-input>
+               <center>
+                  Password:
+                </center>
+                <paper-input label="***********" onkeypress="Javascript: if (event.keyCode==13) signInFunction();" id="password" type="password" name="pword" class="Contactboxpass"></paper-input>
+                <input id="signIn" type="button" value="Sign In" name="Submit" class="sbmitbtn">
+               </p>
+            </form> 
+            <a class = "signUp" href="registration.html">
+            <center>
+              Sign Up!
+            </center>
+            </a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Settings bar over here -->
+<div id = 'settingsbar'>
+  <paper-button label="Transition A" onclick="toggleDialog('paper-dialog-transition-bottom')"></paper-button>
+</div>
+<!-- End main menu (top menu) -->
+<!-- start middle content -->
+<div class="middleWrap howWork">
+  <div id ="howitworkscontentpics">
+    <div id ="num-contents1"><span>1.</span><img src="images/blueclock.png" width="300" height="300"/>
+      <p><strong>Set a study schedule</strong><br/>
+        Enter your assignments and how long you'll spend on each one</p>
+    </div>
+    <div id ="num-contents1"><span>2.</span><img src="images/guard.png" width="300" height="300"/>
+      <p><strong>Start studying</strong></br>
+        Tell TimeM once you start studying</p>
+    </div>
+    <div id ="num-contents1"><span>3.</span><img src="images/studyicon.png" width = "300" height = "300"/>
+      <p><strong>Reduce distractions</strong></br>
+        TimeM will monitor time you spend on distractions and show you what time you'll sleep</p>
+    </div>
+  </div>
+</div>
+<!-- End middle content -->
+<!-- End of login functionality -->
+<!-- Bottom part of the screen -->
+<div id= "bottom-layer-context">
+<div class="middleWrap">
+<div id="main-layer-context">
+  <!--put crap information here -->
+  <div id= "left-informationandcontent"> <strong> TimeM </strong> is a web app that <strong>aids </strong> students who are consistently <strong>distracted </strong> from their <strong> homework. </strong> </div>
+  <div id= "right-informationandcontent"> <strong> A student's </strong> impaired alertness decreases productivity  significantly    due to a lack of sleep, consequently affecting their grades. </div>
+</div>
+  <!-- Tiles -->
+  <div id= "mixed-tiles">
+    <!-- Top left tile -->
+    <div class="tile type-news odd  bgwraptitel">
+      <!-- if you want to put an image -->
+      <div class=image></div>
+      <br/>
+      <br/>
+      <br/>
+      <span class=type>Hours of sleep required for High Schoolers</span>
+      <h1 class="HoursSleep"><strong>8</strong></h1>
+      <a href="http://www.helpguide.org/life/sleeping.htm" class=view>view</a> </div>
+    <div class="tile type-news even"> <span class=type>Average hours of sleep for High Schoolers</span>
+      <h1 class="AverageHours"><strong>7</strong></h1>
+      <a href="http://www.nationwidechildrens.org/sleep-in-adolescents" class=view>view</a> </div>
+    <div class="tile type-case_study odd bgwrappoh"> <br/>
+      <br/>
+      <br/>
+      <br/>
+      <span class=type>Percent of High Schoolers That Get Enough Sleep</span>
+      <h1 class="PerofHigh" style=""><strong>8% to 15%</strong></h1>
+      <a href="http://sleepfoundation.org/sleep-topics/teens-and-sleep" class=view></a> </div>
+    <div class="tile type-white_paper even bgwrapcolor"> <span class=type>Average number of hours spent by highschoolers, watching TV</span>
+      <h1 class="AverageNnumber"><strong>1.2</strong></h1>
+      <a href="http://thesocietypages.org/socimages/2012/05/30/how-much-do-students-study/" class=view>view</a> </div>
+    <div class="tile type-case_study odd AveHourswrap"> <span class=type> Average hours of HW for students </span>
+      <h1 class="ThreePointFive"><strong>3.5</strong></h1>
+      <a href="http://www.usu.edu/arc/idea_sheets/pdf/estimate_study_hours.pdf" class=view>view</a> </div>
+    <div class="tile type-case_study even AveHoursSecwrap"> <span class=type>Average number of hours spent by highschoolers doing HW</span>
+      <h1 class="PointSevenFive"><strong>.75</strong></h1>
+      <a href="http://www.bls.gov/opub/mlr/2008/11/art4full.pdf" class=view>view</a> </div>
+  </div>
+  <!-- End Tiles -->
+</div>
+  </div>
+<footer>
+  <!-- Script for scroll up feature -->
+  <div id="myCanvas">
+    <div class="footer">
+      <ul>
+        <li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li>
+        <li><a href="contactus.html"><i class="ion-android-social"></i><span>Contact Us</span></a></li>
+        <li><a href= "howitworks.html"><i class="ion-help-buoy"></i><span>How it Works</span></a></li>
+      </ul>
+      <div class="ftTime"><a href="index.html">TimeM.com</a></div>
+    </div>
+  </div>
+</footer>
+</body>
+<script src="js/bootstrap.min.js"></script>
+<!-- Authenticating User to allow user to enter the index.html page, logged in -->
+<script type="text/javascript" src="js/parse-1.2.19.min.js"></script>
+<script type="text/javascript" src="js/howitworks.js" > </script>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
+</html>

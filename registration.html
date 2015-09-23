@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/carousel.css" rel="stylesheet">
+<!-- Fonts and style sheet for the rest of the index -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+<link rel="icon" href="images/favicon.png">
+<link href="components/paper-input/paper-input.html" rel="import">
+<!-- IonIcons -->
+<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/parse-1.2.19.min.js"></script>
+<script src="js/registration.js"></script>
+<title>Home | TimeM</title>
+<!-- Background image -->
+</head>
+<body class="bgIndex">
+<!-- Main menu (top menu) ====================================================-->
+<div class="headerWrap">
+  <div id="fixedNav">
+    <div id='header_top_left' class="active"> <a href = "index.html"> TimeM </a> </div>
+    <div id='cssmenu'>
+      <ul>
+        <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> Contact Us </strong></span> </a> </li>
+        <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> How it works </strong></span> </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End main menu (top menu) -->
+<div class="formRegistration">
+  <div class="registration">
+    <form name="registration">
+      <!-- mail icons and information -->
+      <div class="iconDiv"><img src="images/favicon.png" width="80" height="80" ></div>
+      <!--Input id allows for access parse  DO NOT TOUCH-->
+      <div id ="username">Username</div>
+      <paper-input label="Email" id="inputUsername" name="email" placeholder="Name" required="required"> </paper-input>
+      <div class="clr"></div>
+      <div class = "password">Password </div>
+      <!--Input id allows for access parse  DO NOT TOUCH-->
+      <paper-input id="inputPassword" class="password" name ="password" type="password" required="required" placeholder="***************" name="password">
+      </paper-input>
+      <div class="clr"></div>
+      <div id ="repassword">Re-type Password </div>
+      <paper-input id="retypePassword" type="password" required="password" placeholder="***************" name="repassword"> </paper-input>
+      <div class="clr"></div>
+      <p><a class="btn btn-lg btn-primary" id="signUp" href="#" role="button">Sign Up!</a></p>
+      <div id="passwordsDoNotMatch" style="color: red; font-family: Roboto; font-size: 15px; display:none;"> Passwords Do Not Match </div>
+    </form>
+  </div>
+</div>
+<footer>
+  <!-- Script for scroll up feature -->
+  <div id="myCanvasContact">
+    <div class="footer">
+      <ul>
+        <li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li>
+        <li><a href="contactus.html"><i class="ion-android-social"></i><span>Contact Us</span></a></li>
+        <li><a href= "howitworks.html"><i class="ion-help-buoy"></i><span>How it Works</a></li>
+      </ul>
+      <div class="ftTime"><a href="index.html">TimeM.com</a></div>
+    </div>
+  </div>
+</footer>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+<!-- End of login functionality -->
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/carousel.css" rel="stylesheet">
+<!-- Fonts and style sheet for the rest of the index -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+<link rel="icon" href="images/favicon.png">
+<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Audiowide|Changa+One|Special+Elite' rel='stylesheet' type='text/css'>
+<link href="components/paper-input/paper-input.html" rel="import">
+<!-- IonIcons -->
+<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+<title>Dashboard | TimeM</title>
+<!-- Background image -->
+<!--<img src="images/mainbackground.jpg" class="bg">-->
+<!-- Clock Script begin ================================================================== -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/circle-progress.js"></script>
+<!--<script src="js/popup.js"></script>
+<script src="js/background.js"></script>-->
+<!-- Mahesh Script starts -->
+<script>
+var totAssTime = readCookie("assignmentTtime");
+var totTimeSpentonOtherSites = 0
+var sortedSites = JSON.parse(readCookie("SiteDetailsStr"));
+var siteHostList = "";
+var trackingSites = new Array();
+trackingSites ["facebook"] = 0;
+trackingSites ["yahoo"] = 0;
+trackingSites ["youtube"] = 0;
+trackingSites ["twitter"] = 0;
+trackingSites ["instagram"] = 0;
+trackingSites ["tumblr"] = 0;
+trackingSites ["dailymotion"] = 0;
+trackingSites ["pinterest"] = 0;
+trackingSites ["vine"] = 0;
+for (var j = 0; j < sortedSites.length; j++) {
+   var site = sortedSites[j][0];
+   var secToMin = sortedSites[j][1] / 60; // Convert seconds to minutes
+	if (site != null) {
+		var url = site;
+		var urlParts = url.replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/);
+		var domain = urlParts[0];
+		for( var i in trackingSites){
+			//alert(trackingSites[i]+"--"+domain);
+			if( domain.indexOf(i) >= 0){
+			  siteHostList += domain+"--"+secToMin+",\n";
+			  trackingSites[i] += secToMin;
+			  totTimeSpentonOtherSites += secToMin;
+			}
+		}
+   	} 
+} 
+
+var totTimeWastedinPercent = ((totTimeSpentonOtherSites*100)/totAssTime)/100;
+var rotateAnglediff = totTimeWastedinPercent;
+totTimeWastedinPercent = ((totTimeWastedinPercent*100)/0.59)/1000;
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+</script>
+<!-- Mahesh Script Ends -->
+<script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+<script type="text/javascript" src="js/custom-canvas.js"></script>
+<!-- Clock Script end  ==================================================================-->
+</head>
+<body class="bgIndex">
+<!-- Main menu (top menu) ====================================================-->
+<div class="headerWrap">
+  <div id="fixedNav">
+    <div id='header_top_left' class="active"> <a href = "index.html"> TimeM </a> </div>
+    <div id='cssmenu'>
+      <ul>
+        <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>
+        <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End main menu (top menu) -->
+<!-- Bottom part of the screen, main content -->
+<div class="dashBoard">
+  <div class="timeBg">
+    <div id="status">
+
+      <!-- Starts green clock -->
+      <div class="greenClock">
+        <div class="watchWrap" id="stageGreen1">
+          <div id="circleGreenOne"></div>
+        </div>
+        <div class="watchWrap" id="stageGreen2">
+          <div id="circlegreenTwo"></div>
+        </div>
+        <div class="watchWrap" id="stageGreen3">
+          <div id="circlegreenThree"></div>
+        </div>
+        <div class="watchWrap" id="stageGreen4">
+          <div id="circlegreenFour"></div>
+        </div>
+        <div class="watchWrap" id="stageGreen5">
+          <div id="circlegreenFive"></div>
+        </div>
+        <div class="watchWrap" id="stageGreen6">
+          <div id="circlegreenSix"></div>
+        </div>
+      </div>
+      <!--Ends green clock -->
+      <!-- Starts orange clock -->
+      <div class="orangeClock">
+         <div class="watchWrap" id="stageOrange1">
+          <div id="circleOrangeone"></div>
+        </div>
+        <div class="watchWrap" id="stageOrange2">
+          <div id="circleOrangetwo"></div>
+        </div>
+        <div class="watchWrap" id="stageOrange3">
+          <div id="circleOrangethree"></div>
+        </div>
+        <div class="watchWrap" id="stageOrange4">
+          <div id="circleOrangefour"></div>
+        </div>
+        <div class="watchWrap" id="stageOrange5">
+          <div id="circleOrangefive"></div>
+        </div>
+        <div class="watchWrap" id="stageOrange6">
+          <div id="circleOrangesix"></div>
+        </div>
+      </div>
+      <!-- Ends orange clock -->
+      <!-- Starts red clock -->
+      <div class="redClock">
+       <div class="watchWrap" id="stageRed1">
+          <div id="circleRedone"></div>
+        </div>
+        <div class="watchWrap" id="stageRed2">
+          <div id="circleRedtwo"></div>
+        </div>
+        <div class="watchWrap" id="stageRed3">
+          <div id="circleRedthree"></div>
+        </div>
+        <div class="watchWrap" id="stageRed4">
+          <div id="circleRedfour"></div>
+        </div>
+        <div class="watchWrap" id="stageRed5">
+          <div id="circleRedfive"></div>
+        </div>
+        <div class="watchWrap" id="stageRed6">
+          <div id="circleRedsix"></div>
+        </div>
+      </div>
+      <!-- Ends red clock -->
+      <img id="image-result" hidden> </div>
+    <div id="chartContainer"></div>
+  </div>
+</div>
+<footer>
+  <!-- Script for scroll up feature -->
+  <div id="myCanvasContact">
+    <div class="footer">
+      <ul>
+        <li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li>
+        <li><a href="contactus.html"><i class="ion-android-social"></i><span>Contact Us</span></a></li>
+        <li><a href= "howitworks.html"><i class="ion-help-buoy"></i><span>How it Works</span></a></li>
+      </ul>
+      <div class="ftTime"><a href="index.html">TimeM.com</a></div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>
