@@ -184,7 +184,6 @@ $(document).ready(function(){
     query.find({
   	  success: function(results){
     	  for(var i = 0; i < results.length; i++ ){
-			  alert(results[i].get("assignment"));
       	   console.log(results[i].get("assignment"));
 		   //document.cookie="assignment=" + results[i].get("assignment")+"||"+results[i].get("time");
 		   //totAssignmentTime = totAssignmentTime + results[i].get("time");
