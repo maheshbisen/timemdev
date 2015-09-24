@@ -111,6 +111,7 @@ $(document).ready(function(){
 		var username = array[0];*/
 		//Taking complete cookie string as a username, needs to send username specific  cookie only
 		var username = getCookie("username");
+		//alert(uname);
 		return username;
 	}
 
@@ -176,6 +177,7 @@ $(document).ready(function(){
 
   //Makes the Assignment list by searching for items in parse given the username
   var makeAssignmentList = function(username){
+  	//alert(username);
 	var totAssignmentTime = 0;
     var query = new Parse.Query("Assignment");
     //console.log(query);
