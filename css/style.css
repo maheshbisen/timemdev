@@ -514,7 +514,7 @@ hr.style-one {
 }
 #myCanvasContact {
 	border:5px solid #000000;
-	background:rgba(0, 0, 0, 0.7);
+	background:#000;
 	width:100%;
 	margin:0px 0px;
 	position:absolute;
