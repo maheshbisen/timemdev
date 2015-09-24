@@ -35,7 +35,8 @@ Time for students for the next years classes-->
 <title>Profile | TimeM</title>
 
 </head>
-<body class="bgIndex">
+<body>
+<img src="images/mainbackground.jpg" class="bg">
 <!-- Nav Bar(top menu) ====================================================-->
 <div class="headerWrap">
   <div id="fixedNav">
@@ -64,7 +65,7 @@ Time for students for the next years classes-->
 <!-- Footer starts here -->
 <footer>
   <!-- Script for scroll up feature -->
-  <div id="myCanvasContact">
+<div id="myCanvasContact">
     <div class="footer">
       <ul>
         <li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li>
@@ -75,11 +76,12 @@ Time for students for the next years classes-->
     </div>
   </div>
 </footer>
+
 <!-- Footer ends here -->
 <!-- Polymer dialog ======================================================================================-->
 <paper-dialog heading="Settings" transition="paper-dialog-transition-center" class ="setting">
   <!-- Wake Up time input -->
-  <div class="wakeUpHeading"> <strong>When you need to get up for school: </strong> </div>
+  <div class="wakeUpHeading">When you need to get up for school:</div>
     <div class="wakeupDiv">
   <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
     <option value="off">OFF</option>
@@ -175,7 +177,7 @@ Time for students for the next years classes-->
       <div class="wakeupDiv">
    <div class="otherActivities">
     <!-- Varun put a better description for this here -->
-    <strong>Other Activities</strong> </div>
+    Other Activities</div>
   <!-- Activites hours -->
   <select id="extraHR" name="other_activities_hours" title="Activities Hour">
     <option value="">OFF</option>
@@ -255,9 +257,11 @@ Time for students for the next years classes-->
     <option value="59">59 min</option>
   </select>
  </div>
+ <div class="chekbox-correct">
   <paper-checkbox role="checkbox" tabindex="0" aria-checked="true" checked=""></paper-checkbox>
+  </div>
   <div class="sleepCalcTitle"> <strong> Turn On Sleep Calculator? </strong> </div>
-  <paper-button id="saveButton"label="Save" onclick="document.querySelector('#toast1').show()" ></paper-button>
+  <paper-button id="saveButton" class="saveButtonnone" label="Save" onclick="document.querySelector('#toast1').show()" ></paper-button>
    <div class="clr"></div>
   <paper-toast id="toast1" text="Your selections have been saved."></paper-toast>
 </paper-dialog>

@@ -13,17 +13,17 @@ window.onload = function () {
 		data: [
 		{
 			indexLabelFontSize: 20,
-			type: "column", //change it to line, area, bar, pie, etc
+			type: "column", //change it to line, area, bar, pie, etc			
 			dataPoints: [
-				{ x: 10, y: trackingSites["instagram"],indexLabel: "Instagram", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside"},
-				{ x: 20, y: trackingSites["youtube"],indexLabel: "Youtube", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside" },
-				{ x: 30, y: trackingSites["yahoo"],indexLabel: "Yahoo (all)", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside" },
-				{ x: 40, y: trackingSites["tumblr"],indexLabel: "Tumblr", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside" },
-				{ x: 50, y: trackingSites["dailymotion"],indexLabel: "Dailymotion", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside"},
-				{ x: 60, y: trackingSites["vine"],indexLabel: "Vine", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside" },
-				{ x: 70, y: trackingSites["twitter"],indexLabel: "Twitter", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside" },
-				{ x: 80, y: trackingSites["pinterest"],indexLabel: "Pinterest", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside"  },
-				{ x: 90, y: trackingSites["facebook"],indexLabel: "Facebook", indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside" }
+				{ y: trackingSites["instagram"],indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Instagram" },
+				{ y: trackingSites["youtube"],indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Youtube" },
+				{ y: trackingSites["yahoo"], indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Yahoo (all)" },
+				{ y: trackingSites["tumblr"],indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Tumblr" },
+				{ y: trackingSites["dailymotion"],indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Dailymotion" },
+				{ y: trackingSites["vine"], indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Vine" },
+				{ y: trackingSites["twitter"], indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Twitter"  },
+				{ y: trackingSites["pinterest"], indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Pinterest"  },
+				{ y: trackingSites["facebook"], indexLabelFontColor: "white", indexLabelOrientation: "vertical", indexLabelPlacement: "inside", label: "Facebook" }
 			]
 		}
 		]

@@ -12,6 +12,7 @@
 <!--Links to the stylesheet for the assignments page-->
 <!-- <link rel="stylesheet" type="text/css" href="css/assignments.css">-->
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/nav.css">
 <!-- Common Js file for both assignments.html and index.js -->
 <script src="js/common.js"></script>
 <!-- Fonts and style sheet for the rest of the assignments page -->
@@ -34,7 +35,9 @@
 <!--<img src="images/mainbackground.jpg" class="bg">-->
 <!-- In line css for polymer checkbox-->
 </head>
-<body class="bgIndex">
+<body>
+<!-- Background image -->
+<img src="images/mainbackground.jpg" class="bg">
 <div id ="pageContentWrapper">
   <!-- Nav Bar(top menu) ====================================================-->
   <div class="headerWrap">
@@ -55,7 +58,7 @@
   <!-- Polymer dialog ======================================================================================-->
   <paper-dialog heading="Settings" transition="paper-dialog-transition-center"  class ="setting">
     <!-- Wake Up time input -->
-    <div class="wakeUpHeading"><strong>When I need to get up for school:</strong></div>
+    <div class="wakeUpHeading">When I need to get up for school:</div>
     <div class="wakeupDiv">
       <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
         <option value="off">OFF</option>
@@ -147,7 +150,7 @@
         <option value="59">59</option>
       </select>
     </div>
-    <div class="startTimeWork"> <strong>When I will start on homework: </strong> </div>
+    <div class="startTimeWork">When I will start on homework:</div>
     <div class="wakeupDiv">
       <select id="startWorkHr" name="startwork_hour" title="Start Work Hour" class="startWorkHour">
         <option value="off">OFF</option>
@@ -240,7 +243,7 @@
       </select>
     </div>
     <div class="wakeupDiv">
-      <div class="otherActivities"><strong> Other Activities: </strong></div>
+      <div class="otherActivities"> Other Activities: </div>
       <!-- Activites hours -->
       <select id="extraHR" name="other_activities_hours" title="Activities Hour">
         <option value="">OFF</option>
@@ -319,9 +322,11 @@
         <option value="59">59 min</option>
       </select>
     </div>
-    <paper-checkbox id="statusSleepCalculator" role="checkbox" tabindex="0" aria-checked="false" checked=""></paper-checkbox>
+    <div class="chekbox-correct">
+      <paper-checkbox id="statusSleepCalculator" role="checkbox" tabindex="0" aria-checked="false" checked=""></paper-checkbox>
+    </div>
     <div class="sleepCalcTitle"> <strong> Turn On Sleep Calculator? </strong> </div>
-    <paper-button id="saveButton"label="Save" onclick="document.querySelector('#toast1').show()"></paper-button>
+    <paper-button id="saveButton"label="Save" class="saveButtonnone"   onclick="document.querySelector('#toast1').show()"></paper-button>
     <paper-toast id="toast1" text="Your selections have been saved."></paper-toast>
   </paper-dialog>
   <!-- End Paper Dialog ================================================================================= -->
@@ -330,11 +335,11 @@
     <div class="extraPersonTemplate">
       <div class="controls controls-row">
         <!-- Input for the assignment on the assignments page -->
-        <paper-input id="assignment" class="assignmentInput ColorWhite" placeholder="Assignment Name" type="text" name="assignment" ></paper-input>
+        <paper-input id="assignment1" class="assignmentInput ColorWhite ColorWhitefont " placeholder="Assignment Name" type="text" name="assignment" ></paper-input>
         <!-- Input for the minutes on the assignments page -->
-        <paper-input id="mins" placeholder="Minutes" type="text" name="mins" class="ColorWhite"></paper-input>
+        <paper-input id="mins" placeholder="Minutes" type="text" name="mins" class="ColorWhite ColorWhitefont "></paper-input>
         <!-- Submit button for assignments page -->
-        <input id="addNewAssignment" class="submit" type="submit" value="Submit">
+        <input id="addNewAssignment" class="submit submitbtn" type="submit" value="Submit">
       </div>
     </div>
     <div id="container"></div>
@@ -361,7 +366,7 @@
   <!-- PARSE JAVA SCRIPT ===================================================================================-->
   <div id="addMinutes"  style ="font-family: 'Raleway', sans-serif; font-size: 35px; z-index: 10; color: white; text-decoration:none;  text-align: center; display: none"> <strong> &nbsp; Add Minutes! </strong> </div>
   <!-- Add minutes buttons -->
-  <div id="addMinutesButton" class="page-wrap" style = "position: relative; top: 80px; text-align: center; display: none">
+  <div id="addMinutesButton" class="page-wrap" style = "position: relative;  text-align: center; display: none">
     <nav>
       <ul class="nav">
         <li><a href="javascript:void(0);" class="icon-home btnIncrementTime" data-min="5" onClick="document.querySelector('#toast2').show()" ></a></li>
@@ -377,7 +382,27 @@
   </div>
   <!-- End add minutes buttons -->
 </div>
-<!--<iframe class="iframeFooter"scrolling="no" src="footerMain/main.html"></iframe>-->
+<div class="footerassignmet">
+  <div class="footercontwrap">
+    <div class="ftrlogoimg"><img src="footerMain\img\favicon.png"></div>
+    <div class="footerMenuList">
+      <ul>
+        <li ><a href="index.html" target="_top"> Home</a></li>
+        <li><a href="profile.html" target="_top"> Profile</a></li>
+        <li><a href="assignments.html" target="_top"> Assignments</a></li>
+        <li><a href="howitworks.html" target="_top">How to use it</a></li>
+        <li><a href="contactus.html" target="_top">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footerMenucontactList">
+    <ul>
+    	<li class="contacUstext">Contact Us</li>
+        <li><a href="mailto:TIMEM@GMAIL.COM">TIMEM@GMAIL.COM</a></li>
+    </ul>	
+    </div> 
+  </div>
+</div>
+
 </body>
 <script type="text/javascript" src="js/toggle.js"></script>
 <!-- Placed at the end of the document so the pages load faster -->

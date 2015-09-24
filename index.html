@@ -23,14 +23,16 @@
 <!-- IonIcons -->
 <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
 <title>Home | TimeM</title>
-<!-- Background image -->
-<!--<img src="images/mainbackground.jpg" class="bg">-->
+
+
 <!-- Clock Script begin ================================================================== -->
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/index.js"> </script>
 <!-- Clock Script end  ==================================================================-->
 </head>
 <body>
+<!-- Background image -->
+<img src="images/mainbackground.jpg" class="bg">
 <!-- Main menu (top menu) ====================================================-->
 <div class="headerWrap">
   <div id="fixedNav">
@@ -68,7 +70,7 @@
 <!-- End main menu (top menu) -->
 <!-- Carousel  ================================================== -->
 
-<div id="myCarousel" class="carousel slide bgIndex" data-ride="carousel" style="z-index:3;">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -80,10 +82,9 @@
       <div class="container">
         <div class="carousel-caption">
           <h1 class="CarouselFirsthead">Welcome to TimeM.</h1>
-          <br/>
-          <hr>
-          <h2 class="CarouselSecondhead">A revolutionary way for <strong>students</strong> to manage their time.</h2>
-          <p><a class="btn" href="registration.html" role="button">Sign Up!</a></p>
+          <h2 class="CarouselSecondhead">A revolutionary way for <strong>students</strong><br> to manage their time.</h2>
+          <div class="border-sep"></div>
+          <p><a class="btn SignUpbtn" href="registration.html" role="button">Sign Up!</a></p>
           
         </div>
       </div>

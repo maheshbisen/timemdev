@@ -2,9 +2,6 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
-  padding-bottom: 40px;
-}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -36,8 +33,8 @@ body {
 
 /* Carousel base class */
 .carousel {
-  height: 625px;
-  margin-bottom: 650px;
+  height: 600px;
+/*  margin-bottom: 650px;*/
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
