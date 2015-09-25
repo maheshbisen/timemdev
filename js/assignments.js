@@ -129,7 +129,9 @@ $(document).ready(function(){
   //Creates a New assignment
   $("#addNewAssignment").on('click', function(){
     var username = getUsername();
+	//alert(username);
     var assignment = $("#assignment").val();
+	//alert(assignment);
     var time = parseInt($("#mins").val());
     if (time == null || assignment == "") {
       window.alert("Please input an assigment and how long you think it will take!");
@@ -367,8 +369,10 @@ $(document).ready(function(){
 
 //added by synsynoia
 function getCookie(name) {
+	//alert(name);
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
+	//alert(ca);
     for(var i=0;i < ca.length;i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
