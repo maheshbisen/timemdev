@@ -26,62 +26,17 @@
 <!-- Background image -->
 <!--<img src="images/mainbackground.jpg" class="bg">-->
 <!-- Clock Script begin ================================================================== -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/circle-progress.js"></script>
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!--<script src="js/circle-progress.js"></script>-->
 <!--<script src="js/popup.js"></script>
 <script src="js/background.js"></script>-->
-<!-- Mahesh Script starts -->
-<script>
-var totAssTime = readCookie("assignmentTtime");
-var totTimeSpentonOtherSites = 0
-var sortedSites = JSON.parse(readCookie("SiteDetailsStr"));
-var siteHostList = "";
-var trackingSites = new Array();
-trackingSites ["facebook"] = 0;
-trackingSites ["yahoo"] = 0;
-trackingSites ["youtube"] = 0;
-trackingSites ["twitter"] = 0;
-trackingSites ["instagram"] = 0;
-trackingSites ["tumblr"] = 0;
-trackingSites ["dailymotion"] = 0;
-trackingSites ["pinterest"] = 0;
-trackingSites ["vine"] = 0;
-for (var j = 0; j < sortedSites.length; j++) {
-   var site = sortedSites[j][0];
-   var secToMin = sortedSites[j][1] / 60; // Convert seconds to minutes
-	if (site != null) {
-		var url = site;
-		var urlParts = url.replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/);
-		var domain = urlParts[0];
-		for( var i in trackingSites){
-			//alert(trackingSites[i]+"--"+domain);
-			if( domain.indexOf(i) >= 0){
-			  siteHostList += domain+"--"+secToMin+",\n";
-			  trackingSites[i] += secToMin;
-			  totTimeSpentonOtherSites += secToMin;
-			}
-		}
-   	} 
-} 
 
-var totTimeWastedinPercent = ((totTimeSpentonOtherSites*100)/totAssTime)/100;
-var rotateAnglediff = totTimeWastedinPercent;
-totTimeWastedinPercent = ((totTimeWastedinPercent*100)/0.59)/1000;
-
-function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
-</script>
-<!-- Mahesh Script Ends -->
+<script type="text/javascript" src="js/new-circle.js"></script>
 <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
 <script type="text/javascript" src="js/custom-canvas.js"></script>
+
 <!-- Clock Script end  ==================================================================-->
 </head>
 <body>
@@ -103,78 +58,14 @@ function readCookie(name) {
 <div class="dashBoard">
   <div class="timeBg">
     <div id="status">
-      <!-- Starts green clock -->
-      <div class="greenClock">
-        <div class="watchWrap" id="stageGreen1">
-          <div id="circleGreenOne"></div>
-        </div>
-        <div class="watchWrap" id="stageGreen2">
-          <div id="circlegreenTwo"></div>
-        </div>
-        <div class="watchWrap" id="stageGreen3">
-          <div id="circlegreenThree"></div>
-        </div>
-        <div class="watchWrap" id="stageGreen4">
-          <div id="circlegreenFour"></div>
-        </div>
-        <div class="watchWrap" id="stageGreen5">
-          <div id="circlegreenFive"></div>
-        </div>
-        <div class="watchWrap" id="stageGreen6">
-          <div id="circlegreenSix"></div>
-        </div>
-      </div>
-      <!--Ends green clock -->
-      <!-- Starts orange clock -->
-      <div class="orangeClock">
-         <div class="watchWrap" id="stageOrange1">
-          <div id="circleOrangeone"></div>
-        </div>
-        <div class="watchWrap" id="stageOrange2">
-          <div id="circleOrangetwo"></div>
-        </div>
-        <div class="watchWrap" id="stageOrange3">
-          <div id="circleOrangethree"></div>
-        </div>
-        <div class="watchWrap" id="stageOrange4">
-          <div id="circleOrangefour"></div>
-        </div>
-        <div class="watchWrap" id="stageOrange5">
-          <div id="circleOrangefive"></div>
-        </div>
-        <div class="watchWrap" id="stageOrange6">
-          <div id="circleOrangesix"></div>
-        </div>
-      </div>
-      <!-- Ends orange clock -->
-      <!-- Starts red clock -->
-      <div class="redClock">
-       <div class="watchWrap" id="stageRed1">
-          <div id="circleRedone"></div>
-        </div>
-        <div class="watchWrap" id="stageRed2">
-          <div id="circleRedtwo"></div>
-        </div>
-        <div class="watchWrap" id="stageRed3">
-          <div id="circleRedthree"></div>
-        </div>
-        <div class="watchWrap" id="stageRed4">
-          <div id="circleRedfour"></div>
-        </div>
-        <div class="watchWrap" id="stageRed5">
-          <div id="circleRedfive"></div>
-        </div>
-        <div class="watchWrap" id="stageRed6">
-          <div id="circleRedsix"></div>
-        </div>
-      </div>
-      <!-- Ends red clock -->
-      <img id="image-result" hidden> </div>
+      <!-- Starts  clock -->
+      <div id="doughnutChart" class="chart"></div>
+      <!--Ends  clock -->
+    </div>
     <div id="chartContainer"></div>
   </div>
 </div>
-<footer>
-  <!-- Script for scroll up feature -->
+<!--<footer>
   <div id="myCanvasContact">
     <div class="footer">
       <ul>
@@ -185,7 +76,27 @@ function readCookie(name) {
       <div class="ftTime"><a href="index.html">TimeM.com</a></div>
     </div>
   </div>
-</footer>
+</footer>-->
+<div class="footerassignmet">
+  <div class="footercontwrap">
+    <div class="ftrlogoimg"><img src="footerMain\img\favicon.png"></div>
+    <div class="footerMenuList">
+      <ul>
+        <li ><a href="index.html" target="_top"> Home</a></li>
+        <li><a href="profile.html" target="_top"> Profile</a></li>
+        <li><a href="assignments.html" target="_top"> Assignments</a></li>
+        <li><a href="howitworks.html" target="_top">How to use it</a></li>
+        <li><a href="contactus.html" target="_top">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footerMenucontactList">
+      <ul>
+        <li class="contacUstext">Contact Us</li>
+        <li><a href="mailto:TIMEM@GMAIL.COM">TIMEM@GMAIL.COM</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>

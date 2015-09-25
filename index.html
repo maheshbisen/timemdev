@@ -23,8 +23,6 @@
 <!-- IonIcons -->
 <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
 <title>Home | TimeM</title>
-
-
 <!-- Clock Script begin ================================================================== -->
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/index.js"> </script>
@@ -41,35 +39,12 @@
       <ul>
         <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>
         <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>
-        <li class='active'> <a href='#'> <span class = 'login'><i class="ion-android-social-user"></i><strong> &nbsp; Login </strong></span> </a>
-          <ul class='dropdown'>
-            <form name = "myform">
-              <p>
-                <center>
-                  Login:
-                </center>
-                <paper-input keys="enter" label="Email" id="username" type="text" name=" username" class="Contactbox"></paper-input>
-               <center>
-                  Password:
-                </center>
-                <paper-input label="***********" onkeypress="Javascript: if (event.keyCode==13) signInFunction();" id="password" type="password" name="pword" class="Contactboxpass"></paper-input>
-                <input id="signIn" type="button" value="Sign In" name="Submit" class="sbmitbtn">
-               </p>
-            </form> 
-            <a class = "signUp" href="registration.html">
-            <center>
-              Sign Up!
-            </center>
-            </a>
-          </ul>
-        </li>
       </ul>
     </div>
   </div>
 </div>
 <!-- End main menu (top menu) -->
 <!-- Carousel  ================================================== -->
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="z-index:3;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -82,16 +57,16 @@
       <div class="container">
         <div class="carousel-caption">
           <h1 class="CarouselFirsthead">Welcome to TimeM.</h1>
-          <h2 class="CarouselSecondhead">A revolutionary way for <strong>students</strong><br> to manage their time.</h2>
+          <h2 class="CarouselSecondhead">A revolutionary way for <strong>students</strong><br>
+            to manage their time.</h2>
           <div class="border-sep"></div>
           <p><a class="btn SignUpbtn" href="registration.html" role="button">Sign Up!</a></p>
-          
         </div>
       </div>
     </div>
     <div class="item">
       <div class="container">
-        <div class="carousel-caption CaptionSecond">        
+        <div class="carousel-caption CaptionSecond">
           <SCRIPT LANGUAGE="JavaScript">var clocksize='460';</SCRIPT>
           <SCRIPT SRC="http://gheos.net/js/clock.js"></SCRIPT>
         </div>
@@ -111,54 +86,79 @@
 <!-- Login functionality -->
 <!-- Bottom part of the screen, main content -->
 <div id= "bottom-layer-context">
-<div class="middleWrap">
-<div id="main-layer-context">
-  <!--put crap information here -->
-  <div id= "left-informationandcontent"> <strong> TimeM </strong> is a web app that <strong>aids </strong> students who are consistently <strong>distracted </strong> from their <strong> homework. </strong> </div>
-  <div id= "right-informationandcontent"> <strong> A student's </strong> impaired alertness decreases productivity  significantly    due to a lack of sleep, consequently affecting their grades. </div>
-</div>
-  <!-- Tiles -->
-  <div id= "mixed-tiles">
-    <!-- Top left tile -->
-    <div class="tile type-news odd  bgwraptitel">
-      <!-- if you want to put an image -->
-      <div class=image></div>
-      <br/>
-      <br/>
-      <br/>
-      <span class=type>Hours of sleep required for High Schoolers</span>
-      <h1 class="HoursSleep"><strong>8</strong></h1>
-      <a href="http://www.helpguide.org/life/sleeping.htm" class=view>view</a> </div>
-    <div class="tile type-news even"> <span class=type>Average hours of sleep for High Schoolers</span>
-      <h1 class="AverageHours"><strong>7</strong></h1>
-      <a href="http://www.nationwidechildrens.org/sleep-in-adolescents" class=view>view</a> </div>
-    <div class="tile type-case_study odd bgwrappoh"> <br/>
-      <br/>
-      <br/>
-      <br/>
-      <span class=type>Percent of High Schoolers That Get Enough Sleep</span>
-      <h1 class="PerofHigh" style=""><strong>8% to 15%</strong></h1>
-      <a href="http://sleepfoundation.org/sleep-topics/teens-and-sleep" class=view></a> </div>
-    <div class="tile type-white_paper even bgwrapcolor"> <span class=type>Average number of hours spent by highschoolers, watching TV</span>
-      <h1 class="AverageNnumber"><strong>1.2</strong></h1>
-      <a href="http://thesocietypages.org/socimages/2012/05/30/how-much-do-students-study/" class=view>view</a> </div>
-    <div class="tile type-case_study odd AveHourswrap"> <span class=type> Average hours of HW for students </span>
-      <h1 class="ThreePointFive"><strong>3.5</strong></h1>
-      <a href="http://www.usu.edu/arc/idea_sheets/pdf/estimate_study_hours.pdf" class=view>view</a> </div>
-    <div class="tile type-case_study even AveHoursSecwrap"> <span class=type>Average number of hours spent by highschoolers doing HW</span>
-      <h1 class="PointSevenFive"><strong>.75</strong></h1>
-      <a href="http://www.bls.gov/opub/mlr/2008/11/art4full.pdf" class=view>view</a> </div>
+  <div class="middleWrap">
+    <div id="main-layer-context">
+      <!--put crap information here -->
+      <div id= "left-informationandcontent"> <strong> TimeM </strong> is a web app that <strong>aids </strong> students who are consistently <strong>distracted </strong> from their <strong> homework. </strong> </div>
+      <div id= "right-informationandcontent"> <strong> A student's </strong> impaired alertness decreases productivity  significantly    due to a lack of sleep, consequently affecting their grades. </div>
+    </div>
+    <!-- Tiles -->
+    <div id= "mixed-tiles">
+      <!-- Top left tile -->
+      <div class="tile type-news odd  bgwraptitel">
+        <!-- if you want to put an image -->
+        <div class=image></div>
+        <br/>
+        <br/>
+        <br/>
+        <span class=type>Hours of sleep required for High Schoolers</span>
+        <h1 class="HoursSleep"><strong>8</strong></h1>
+        <a href="http://www.helpguide.org/life/sleeping.htm" class=view>view</a> </div>
+      <div class="tile type-news even"> <span class=type>Average hours of sleep for High Schoolers</span>
+        <h1 class="AverageHours"><strong>7</strong></h1>
+        <a href="http://www.nationwidechildrens.org/sleep-in-adolescents" class=view>view</a> </div>
+      <div class="tile type-case_study odd bgwrappoh"> <br/>
+        <br/>
+        <br/>
+        <br/>
+        <span class=type>Percent of High Schoolers That Get Enough Sleep</span>
+        <h1 class="PerofHigh" style=""><strong>8% to 15%</strong></h1>
+        <a href="http://sleepfoundation.org/sleep-topics/teens-and-sleep" class=view></a> </div>
+      <div class="tile type-white_paper even bgwrapcolor"> <span class=type>Average number of hours spent by highschoolers, watching TV</span>
+        <h1 class="AverageNnumber"><strong>1.2</strong></h1>
+        <a href="http://thesocietypages.org/socimages/2012/05/30/how-much-do-students-study/" class=view>view</a> </div>
+      <div class="tile type-case_study odd AveHourswrap"> <span class=type> Average hours of HW for students </span>
+        <h1 class="ThreePointFive"><strong>3.5</strong></h1>
+        <a href="http://www.usu.edu/arc/idea_sheets/pdf/estimate_study_hours.pdf" class=view>view</a> </div>
+      <div class="tile type-case_study even AveHoursSecwrap"> <span class=type>Average number of hours spent by highschoolers doing HW</span>
+        <h1 class="PointSevenFive"><strong>.75</strong></h1>
+        <a href="http://www.bls.gov/opub/mlr/2008/11/art4full.pdf" class=view>view</a> </div>
+    </div>
+    <!-- End Tiles -->
   </div>
-  <!-- End Tiles -->
 </div>
-  </div>
-
-<footer>
-  <!-- Script for scroll up feature -->
-
+<!--<footer>
   <div id="myCanvas">
-  <div class="footer"><ul><li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li><li><a href="contactus.html"><i class="ion-android-social"></i><span>Contact Us</span></a></li><li><a href= "howitworks.html"><i class="ion-help-buoy"></i><span>How it Works</span></a></li></ul><div class="ftTime"><a href="index.html">TimeM.com</a></div></div></div>
-</footer>
+    <div class="footer">
+      <ul>
+        <li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li>
+        <li><a href="contactus.html"><i class="ion-android-social"></i><span>Contact Us</span></a></li>
+        <li><a href= "howitworks.html"><i class="ion-help-buoy"></i><span>How it Works</span></a></li>
+      </ul>
+      <div class="ftTime"><a href="index.html">TimeM.com</a></div>
+    </div>
+  </div>
+</footer>-->
+<div class="footerassignmet">
+  <div class="footercontwrap">
+    <div class="ftrlogoimg"><img src="footerMain\img\favicon.png"></div>
+    <div class="footerMenuList">
+      <ul>
+        <li ><a href="index.html" target="_top"> Home</a></li>
+        <li><a href="profile.html" target="_top"> Profile</a></li>
+        <li><a href="assignments.html" target="_top"> Assignments</a></li>
+        <li><a href="howitworks.html" target="_top">How to use it</a></li>
+        <li><a href="contactus.html" target="_top">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footerMenucontactList">
+    <ul>
+    	<li class="contacUstext">Contact Us</li>
+        <li><a href="mailto:TIMEM@GMAIL.COM">TIMEM@GMAIL.COM</a></li>
+    </ul>	
+    </div> 
+  </div>
+</div>
 </body>
 <!-- Authenticating User to allow user to enter the assignments.html page, logged in -->
 <script type="text/javascript" src="js/parse-1.2.19.min.js"></script>
