@@ -53,6 +53,7 @@ var showInactiveAssignments = function(node) {
 
 // Timer function
 function startTimer(minutesRemaining, secondsRemaining, display) {
+  timer = true;
   minutesRemaining--;
   setInterval(function () {
     // actual minutes algorithm
