@@ -1,5 +1,5 @@
 <!-- Mahesh Script starts -->
-var devStartRad =0.925;
+var devStartRad =1.5;
 var totAssTime = readCookie("assignmentTtime");
 var totTimeSpentonOtherSites = 0;
 var sortedSites = JSON.parse(readCookie("SiteDetailsStr"));
