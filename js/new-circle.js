@@ -1,4 +1,5 @@
 <!-- Mahesh Script starts -->
+var devStartRad =0.925;
 var totAssTime = readCookie("assignmentTtime");
 var totTimeSpentonOtherSites = 0;
 var sortedSites = JSON.parse(readCookie("SiteDetailsStr"));
@@ -35,7 +36,7 @@ a = totTimeSpentonOtherSites;
 
 $(function(){
   timeinsecs =a*60;  
-  remsleeptime = 25000 - timeinsecs;
+  remsleeptime = 25200 - timeinsecs;
 	 if(timeinsecs==0){
 	   sleeptimecolor="#35d404";   
 	  }else if(timeinsecs<=3600){
@@ -46,7 +47,19 @@ $(function(){
   $("#doughnutChart").drawDoughnutChart([
     { title: "Time spent on browsing", value :timeinsecs,  color: "#969696" },
     { title: "Remaining sleep time", value:  remsleeptime,   color: sleeptimecolor},
-    { title: "",    value:  18200,   color: "#ffffff" } 
+    { title: "",    value:  18000,   color: "#ffffff" } 
+   
+  ]);
+});
+
+$(function(){
+	 fifteenmin=25200,
+	 twohrs =18000
+	 
+  $("#doughnutChartnew").drawDoughnutChart([
+    { title: "Fours Hrs", value :fifteenmin,  color: "#4f81bd" },
+    { title: "Two Hrs", value:  twohrs,   color: "#ffffff" }
+	
    
   ]);
 });
@@ -85,6 +98,7 @@ $(function(){
         tipOffsetX: -8,
         tipOffsetY: -45,
         tipClass: "doughnutTip",
+		tipClassnew: "doughnutTipNew",
         summaryClass: "doughnutSummary",
         //summaryTitle: "TOTAL:",
        // summaryTitleClass: "doughnutSummaryTitle",
@@ -141,6 +155,12 @@ $(function(){
     var $tip = $('<div class="' + settings.tipClass + '" />').appendTo('body').hide(),
         tipW = $tip.width(),
         tipH = $tip.height();
+		
+	//Set up newtooltip
+    var $tipNew = $('<div class="' + settings.tipClassnew + '" />').appendTo('body').hide(),
+        tipWNew = $tipNew.width(),
+        tipHNew = $tipNew.height();
+		
 
     //Set up center text area
     var summarySize = (cutoutRadius - (doughnutRadius - cutoutRadius)) * 2,
@@ -216,14 +236,19 @@ $(function(){
       });
     }
     function drawPieSegments (animationDecimal) {
-      var startRadius = -PI / 1.52,//-90 degree
+		//alert(animationDecimal);
+      var startRadius = -PI / devStartRad,//-90 degree
+	  
           rotateAnimation = 1;
       if (settings.animation && settings.animateRotate) rotateAnimation = animationDecimal;//count up between0~1
 
       drawDoughnutText(animationDecimal, segmentTotal);
 
       $pathGroup.attr("opacity", animationDecimal);
-
+    
+	  
+		  
+		  
       //If data have only one value, we draw hollow circle(#1).
       if (data.length === 1 && (4.7122 < (rotateAnimation * ((data[0].value / segmentTotal) * (PI * 2)) + startRadius))) {
         $paths[0].attr("d", getHollowCirclePath(doughnutRadius, cutoutRadius));
@@ -251,6 +276,7 @@ $(function(){
         $paths[i].attr("d", cmd.join(' '));
         startRadius += segmentAngle;
       }
+	  
     }
     function drawDoughnutText(animationDecimal, segmentTotal) {
       $summaryNumber

@@ -31,6 +31,7 @@
 <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
 <!-- Title of Assignments page-->
 <title>Assignments | TimeM</title>
+<script type="text/javascript" src="js/index.js"> </script>
 <!-- Background image -->
 <!--<img src="images/mainbackground.jpg" class="bg">-->
 <!-- In line css for polymer checkbox-->
@@ -45,9 +46,9 @@
       <div id='header_top_left' class="active"> <a href = "profile.html"> TimeM </a> </div>
       <div id='cssmenu'>
         <ul>
-         <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>  
+          <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>
           <li class='active'> <a href='assignments.html'> <span class = 'howitworks'><i class="ion-podium"></i><strong> &nbsp; Assignments </strong></span> </a> </li>
-           <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>        
+          <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>
           <li>
             <paper-button class = "lock" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
           </li>
@@ -55,9 +56,44 @@
       </div>
     </div>
   </div>
+  <div id="status">
+    <div id="doughnutChartnew" class="chart chartFullDiv"></div>
+    <div id="doughnutChart" class="chart chartTimeDiv">
+      <div class="watchInner">
+        <SCRIPT LANGUAGE="JavaScript">var clocksize='200';</SCRIPT>
+        <SCRIPT SRC="js/clock.js"></SCRIPT>
+      </div>
+    </div>
+  </div>
+  <div class="clr"></div>
   <!-- Polymer dialog ======================================================================================-->
   <paper-dialog heading="Settings" transition="paper-dialog-transition-center"  class ="setting">
     <!-- Wake Up time input -->
+    <div class="wakeUpHeading">When I need to go to sleep:</div>
+    <div class="wakeupDiv">
+      <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
+        <option value="off">OFF</option>
+        <option value="1">1 AM</option>
+        <option value="2">2 AM</option>
+        <option value="3">3 AM</option>
+        <option value="4">4 AM</option>
+        <option value="5">5 AM</option>
+        <option value="6">6 AM</option>
+        <option value="7">7 AM</option>
+        <option value="8">8 AM</option>
+        <option value="9">9 AM</option>
+        <option value="10">10 AM</option>
+        <option value="11">11 AM</option>
+        <option value="12">12 PM</option>
+      </select>
+      <div class="dot">:</div>
+      <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
+        <option value="0">00</option>
+        <option value="1">15</option>
+        <option value="2">30</option>
+        <option value="3">45</option>
+      </select>
+    </div>
     <div class="wakeUpHeading">When I need to get up for school:</div>
     <div class="wakeupDiv">
       <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
@@ -74,81 +110,13 @@
         <option value="10">10 AM</option>
         <option value="11">11 AM</option>
         <option value="12">12 PM</option>
-        <option value="13">1 PM</option>
-        <option value="14">2 PM</option>
-        <option value="15">3 PM</option>
-        <option value="16">4 PM</option>
-        <option value="17">5 PM</option>
-        <option value="18">6 PM</option>
-        <option value="19">7 PM</option>
-        <option value="20">8 PM</option>
-        <option value="21">9 PM</option>
-        <option value="22"> 10 PM</option>
-        <option value="23"> 11 PM</option>
-        <option value="0">12 AM</option>
       </select>
       <div class="dot">:</div>
       <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
         <option value="0">00</option>
-        <option value="1">01</option>
-        <option value="2">02</option>
-        <option value="3">03</option>
-        <option value="4">04</option>
-        <option value="5">05</option>
-        <option value="6">06</option>
-        <option value="7">07</option>
-        <option value="8">08</option>
-        <option value="9">09</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="29">29</option>
-        <option value="30">30</option>
-        <option value="31">31</option>
-        <option value="32">32</option>
-        <option value="33">33</option>
-        <option value="34">34</option>
-        <option value="35">35</option>
-        <option value="36">36</option>
-        <option value="37">37</option>
-        <option value="38">38</option>
-        <option value="39">39</option>
-        <option value="40">40</option>
-        <option value="41">41</option>
-        <option value="42">42</option>
-        <option value="43">43</option>
-        <option value="44">44</option>
-        <option value="45">45</option>
-        <option value="46">46</option>
-        <option value="47">47</option>
-        <option value="48">48</option>
-        <option value="49">49</option>
-        <option value="50">50</option>
-        <option value="51">51</option>
-        <option value="52">52</option>
-        <option value="53">53</option>
-        <option value="54">54</option>
-        <option value="55">55</option>
-        <option value="56">56</option>
-        <option value="57">57</option>
-        <option value="58">58</option>
-        <option value="59">59</option>
+        <option value="1">15</option>
+        <option value="2">30</option>
+        <option value="3">45</option>
       </select>
     </div>
     <div class="startTimeWork">When I will start on homework:</div>
@@ -167,160 +135,12 @@
         <option value="10">10 AM</option>
         <option value="11">11 AM</option>
         <option value="12">12 PM</option>
-        <option value="13">1 PM</option>
-        <option value="14">2 PM</option>
-        <option value="15">3 PM</option>
-        <option value="16">4 PM</option>
-        <option value="17">5 PM</option>
-        <option value="18">6 PM</option>
-        <option value="19">7 PM</option>
-        <option value="20">8 PM</option>
-        <option value="21">9 PM</option>
-        <option value="22"> 10 PM</option>
-        <option value="23"> 11 PM</option>
-        <option value="0">12 AM</option>
       </select>
       <select id="startWorkMin" name="startwork_minute" title="Start Work Minute" class="startWorkMin">
         <option value="0">00</option>
-        <option value="1">01</option>
-        <option value="2">02</option>
-        <option value="3">03</option>
-        <option value="4">04</option>
-        <option value="5">05</option>
-        <option value="6">06</option>
-        <option value="7">07</option>
-        <option value="8">08</option>
-        <option value="9">09</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="29">29</option>
-        <option value="30">30</option>
-        <option value="31">31</option>
-        <option value="32">32</option>
-        <option value="33">33</option>
-        <option value="34">34</option>
-        <option value="35">35</option>
-        <option value="36">36</option>
-        <option value="37">37</option>
-        <option value="38">38</option>
-        <option value="39">39</option>
-        <option value="40">40</option>
-        <option value="41">41</option>
-        <option value="42">42</option>
-        <option value="43">43</option>
-        <option value="44">44</option>
-        <option value="45">45</option>
-        <option value="46">46</option>
-        <option value="47">47</option>
-        <option value="48">48</option>
-        <option value="49">49</option>
-        <option value="50">50</option>
-        <option value="51">51</option>
-        <option value="52">52</option>
-        <option value="53">53</option>
-        <option value="54">54</option>
-        <option value="55">55</option>
-        <option value="56">56</option>
-        <option value="57">57</option>
-        <option value="58">58</option>
-        <option value="59">59</option>
-      </select>
-    </div>
-    <div class="wakeupDiv">
-      <div class="otherActivities"> Other Activities: </div>
-      <!-- Activites hours -->
-      <select id="extraHR" name="other_activities_hours" title="Activities Hour">
-        <option value="">OFF</option>
-        <option value="1">1hr</option>
-        <option value="2">2hr</option>
-        <option value="3">3hr</option>
-        <option value="4">4hr</option>
-        <option value="5">5hr</option>
-        <option value="6">6hr</option>
-        <option value="7">7hr</option>
-        <option value="8">8hr</option>
-        <option value="9">9hr</option>
-        <option value="10">10hr</option>
-      </select>
-      <div class="and"> <strong>& </strong> </div>
-      <select id="extraMin"name="other_activites_minutes" title="Activities Minute" >
-        <option value="0">00 min</option>
-        <option value="1">01 min</option>
-        <option value="2">02 min</option>
-        <option value="3">03 min</option>
-        <option value="4">04 min</option>
-        <option value="5">05 min</option>
-        <option value="6">06 min</option>
-        <option value="7">07 min</option>
-        <option value="8">08 min</option>
-        <option value="9">09 min</option>
-        <option value="10">10 min</option>
-        <option value="11">11 min</option>
-        <option value="12">12 min</option>
-        <option value="13">13 min</option>
-        <option value="14">14 min</option>
-        <option value="15">15 min</option>
-        <option value="16">16 min</option>
-        <option value="17">17 min</option>
-        <option value="18">18 min</option>
-        <option value="19">19 min</option>
-        <option value="20">20 min</option>
-        <option value="21">21 min</option>
-        <option value="22">22 min</option>
-        <option value="23">23 min</option>
-        <option value="24">24 min</option>
-        <option value="25">25 min</option>
-        <option value="26">26 min</option>
-        <option value="27">27 min</option>
-        <option value="28">28 min</option>
-        <option value="29">29 min</option>
-        <option value="30">30 min</option>
-        <option value="31">31 min</option>
-        <option value="32">32 min</option>
-        <option value="33">33 min</option>
-        <option value="34">34 min</option>
-        <option value="35">35 min</option>
-        <option value="36">36 min</option>
-        <option value="37">37 min</option>
-        <option value="38">38 min</option>
-        <option value="39">39 min</option>
-        <option value="40">40 min</option>
-        <option value="41">41 min</option>
-        <option value="42">42 min</option>
-        <option value="43">43 min</option>
-        <option value="44">44 min</option>
-        <option value="45">45 min</option>
-        <option value="46">46 min</option>
-        <option value="47">47 min</option>
-        <option value="48">48 min</option>
-        <option value="49">49 min</option>
-        <option value="50">50 min</option>
-        <option value="51">51 min</option>
-        <option value="52">52 min</option>
-        <option value="53">53 min</option>
-        <option value="54">54 min</option>
-        <option value="55">55 min</option>
-        <option value="56">56 min</option>
-        <option value="57">57 min</option>
-        <option value="58">58 min</option>
-        <option value="59">59 min</option>
+        <option value="1">15</option>
+        <option value="2">30</option>
+        <option value="3">45</option>
       </select>
     </div>
     <div class="chekbox-correct">
@@ -346,7 +166,7 @@
     <div id="container"></div>
   </div>
   <!-- Display added assignments -->
-  <div class="yourAssign"> <strong>Your Assignments: </strong></div>
+  <div class="yourAssign">Your Assignments:</div>
   <ul id="assignments" class="list-group">
     <!-- here theassignments will be inserted -->
     <!--li class="list-group-item list-group-item-danger" style="text-align:center">Assignment 4</li-->
@@ -383,12 +203,15 @@
   </div>
   <!-- End add minutes buttons -->
 </div>
+<div class="timeBg">
+  <div id="chartContainer"></div>
+</div>
 <div class="footerassignmet">
   <div class="footercontwrap">
     <div class="ftrlogoimg"><img src="footerMain\img\favicon.png"></div>
     <div class="footerMenuList">
       <ul>
-        <li ><a href="index.html" target="_top"> Home</a></li>
+        <li><a href="index.html" target="_top"> Home</a></li>
         <li><a href="profile.html" target="_top"> Profile</a></li>
         <li><a href="assignments.html" target="_top"> Assignments</a></li>
         <li><a href="howitworks.html" target="_top">How to use it</a></li>
@@ -396,14 +219,13 @@
       </ul>
     </div>
     <div class="footerMenucontactList">
-    <ul>
-    	<li class="contacUstext">Contact Us</li>
+      <ul>
+        <li class="contacUstext">Contact Us</li>
         <li><a href="mailto:TIMEM@GMAIL.COM">TIMEM@GMAIL.COM</a></li>
-    </ul>	
-    </div> 
+      </ul>
+    </div>
   </div>
 </div>
-
 </body>
 <script type="text/javascript" src="js/toggle.js"></script>
 <!-- Placed at the end of the document so the pages load faster -->
@@ -412,4 +234,7 @@
 <!-- End of login functionality -->
 <script type="text/javascript" src="js/parse-1.2.19.min.js"></script>
 <script type="text/javascript" src="js/assignments.js"></script>
+<script type="text/javascript" src="js/new-circle.js"></script>
+<script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+<script type="text/javascript" src="js/custom-canvas.js"></script>
 </html>
