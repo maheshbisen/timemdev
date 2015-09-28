@@ -1,4 +1,5 @@
 var timer = true;
+var firstStartClick = 0;
 var hideInactiveAssignments = function(node) {
   $('html,body').animate({
     scrollTop: $(document).height()/4.5,
@@ -14,6 +15,7 @@ var hideInactiveAssignments = function(node) {
 
       var numberOfLetters = timeRemaining.length;
       var finalTimeWithSpaces="";
+
       for ( var i = 0; i < numberOfLetters; i ++ ) {
         if(timeRemaining[i] == timeRemaining[i]/1) {
             finalTimeWithSpaces= finalTimeWithSpaces + timeRemaining[i];
@@ -23,13 +25,15 @@ var hideInactiveAssignments = function(node) {
         }
       }
       //removes extra space
-      var finalTime= parseInt(finalTimeWithSpaces.replace(/\s+/g, ''));
+
+var finalTime= parseInt(finalTimeWithSpaces.replace(/\s+/g, ''));
+
       //callTimer("#mins", finalTime-1, 60);
       //var display = $(this);
       var display = $($(this).find('td')[1]);
       console.log(display);
       var seconds = 59;
-	  document.cookie="assignmentTtime=" + finalTime; //Added Synsynoia
+      document.cookie="assignmentTtime=" + finalTime; //Added Synsynoia
       startTimer(finalTime, seconds, display);
       console.log(finalTime);
     }
@@ -40,6 +44,7 @@ var hideInactiveAssignments = function(node) {
 
 var showInactiveAssignments = function(node) {
   timer = false;
+  firstStartClick = 1;
   $("html, body").animate({
       scrollTop: 0
   }, 600);
@@ -53,19 +58,31 @@ var showInactiveAssignments = function(node) {
 
 // Timer function
 function startTimer(minutesRemaining, secondsRemaining, display) {
-  timer = true;
-  minutesRemaining--;
+timer = true;
+minutesRemaining = minutesRemaining.toString();
+
+if(firstStartClick ==1) {
+secondsRemaining = minutesRemaining.slice(-2);
+var minutesRemaining = minutesRemaining.substring(0, minutesRemaining.length - 2);
+}
+
+//Below code is for first time click on Start button.
+if(firstStartClick == 0 ) {
+minutesRemaining--; 
+firstStartClick = 1;
+}
+
   setInterval(function () {
     // actual minutes algorithm
-
     if(minutesRemaining > 0) {
       if(timer == true) {
         display.text(parseInt(minutesRemaining) + " : " + parseInt(secondsRemaining));
         secondsRemaining--;
         if(secondsRemaining < 0) {
           minutesRemaining--;
-          secondsRemaining = 60;
-        }
+          secondsRemaining = 59;
+          }
+
       } else {
         // do nothing
       }
@@ -130,9 +147,7 @@ $(document).ready(function(){
   //Creates a New assignment
   $("#addNewAssignment").on('click', function(){
     var username = getUsername();
-	//alert(username);
     var assignment = $("#assignment").val();
-	//alert(assignment);
     var time = parseInt($("#mins").val());
     if (time == null || assignment == "") {
       window.alert("Please input an assigment and how long you think it will take!");
@@ -370,10 +385,8 @@ $(document).ready(function(){
 
 //added by synsynoia
 function getCookie(name) {
-	//alert(name);
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
-	//alert(ca);
     for(var i=0;i < ca.length;i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1,c.length);
