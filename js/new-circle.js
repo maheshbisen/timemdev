@@ -235,7 +235,7 @@ $(function(){
 	  minutes = Math.floor(totalSeconds / 60);
 	  seconds = totalSeconds % 60;
 	  remTimeHrs = hours+":"+minutes;
-		alert(remTimeHrs);
+		//alert(remTimeHrs);
       $tip.text(data[order].title + ": " + remTimeHrs +" Hours").fadeIn(200);
       settings.onPathEnter.apply($(this),[e,data]);	 
     }
