@@ -13,3 +13,9 @@
 
 		
 	}
+	
+//cancel script	   
+	$('#cancel').click(function(){
+		$('.setting').hide();
+	 
+	});

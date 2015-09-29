@@ -601,6 +601,15 @@ hr.style-one {
 	font-family: 'Raleway' sans-serif;
 	width:360px;
 	float:left;
+	margin-top:20px;
+}
+#num-contents1 img{
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:10px;
+
+
 }
 #num-contents1 p {
 	text-align:center;
@@ -610,10 +619,12 @@ hr.style-one {
 	font-size:25px;
 }
 #num-contents1 span {
-	font-size: 50px;
+	font-size: 30px;
 	color: white;
 	font-family: 'Raleway' sans-serif;
 	vertical-align:top;
+	margin-left:5px;
+	
 }
 /*profile*/
 
@@ -637,7 +648,7 @@ hr.style-one {
 }
 /*This is the wake up hour dropdown*/
 .wakeUpHour {
-	width: 130px;
+	width: 100px;
 	height: 45px;
 	font-size: 18px;
 	float:left;
@@ -648,9 +659,9 @@ hr.style-one {
 }
 /*This is the the wake up minute dropdown*/
 .wakeUpMinutes {
-	width: 130px;
+	width: 100px;
 	height: 45px;
-	float:right;
+	float:left;
 	font-size: 18px;
 	padding:2px;
 	border-radius:3px; 
@@ -900,9 +911,9 @@ paper-button #icon {
 	/*width:50%;
 	float:left;
 	margin:0px 25% 3%;*/
-	width: 72%;
+	width: 90%;
     float: left;
-    margin: 0px 13% 3%;
+    margin: 0px 10% 3%;
 }
 .startWorkHour {
 	width: 130px;
@@ -1654,9 +1665,39 @@ a span.addminincercle:focus{
 	float:left; 
 	margin-left:131px;
 }
+.btnSett {
+float:left;
+width:368px !important;
+margin-top:4px !important;
+
+}
 .saveButtonnone{ 
-	float:right; 
-	background:none!important; color:#5e7ac2!important;
+	float:left !important;
+	background:none!important; color:#5e7ac2 !important;width:100px !important;
+}
+.cancelBtn{ 
+	float:right !important;
+	background:none !important; color:#5e7ac2 !important;
+	width:100px !important;
+	padding: 5px !important;
+	text-decoration:none !important;
+	cursor:pointer !important;
+
+	
+}
+.btnSett a:hover{ 
+/*background:#f3f3f3 !important;*/
+text-decoration:none !important;
+
+	
+	
+}
+.btnSett a:focus{ 
+background:#f3f3f3!important;
+text-decoration:none !important;
+
+	
+	
 }
 #left-informationandcontent{ 
 	font-size:40px;
@@ -1669,7 +1710,7 @@ a span.addminincercle:focus{
 	margin-top:-45px;
 }
 .dot{
-float: left; width: 100px; text-align: center; font-weight: bold; margin-top: 5px; font-size: 25px;
+float: left; width: 50px; text-align: center; font-weight: bold; margin-top: 5px; font-size: 25px;
 
 }
 #doughnutChart {

@@ -7,67 +7,63 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="css/carousel.css" rel="stylesheet">
-<!-- Fonts and style sheet for the rest of the landingpage -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/normalize.css" rel="stylesheet">
+<!--Links to the stylesheet for the assignments page-->
+<!--<link rel="stylesheet" type="text/css" href="css/profile.css">-->
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+<!-- Common Js file for both assignments.html and landingpage.js -->
+<script src="js/common.js"></script>
+<!-- Fonts and style sheet for the rest of the assignments page -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:700,400,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
 <link rel="icon" href="images/favicon.png">
+<!-- Polymer Components -->
+<script src="components/platform/platform.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link href="components/paper-button/paper-button.html" rel="import">
+<link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
+<link href="components/paper-dialog/paper-dialog.html" rel="import">
+<link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="components/paper-toast/paper-toast.html">
 <link href="components/paper-input/paper-input.html" rel="import">
 <!-- IonIcons -->
 <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
-<!-- Jquery & Parse -->
-<title>Home | TimeM</title>
-<!-- Background image -->
-<!--	<img src="images/mainbackground.jpg" class="bg">-->
+<!-- 
+Time for students for the next years classes-->
+<!-- Title of Assignments page-->
+<title>Profile | TimeM</title>
+
 </head>
 <body>
 <img src="images/mainbackground.jpg" class="bg">
-<!-- Main menu (top menu) ====================================================-->
+<!-- Nav Bar(top menu) ====================================================-->
 <div class="headerWrap">
   <div id="fixedNav">
     <div id='header_top_left' class="active"> <a href = "index.html"> TimeM </a> </div>
     <div id='cssmenu'>
       <ul>
         <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>
-        <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>  
-                 <li class='active'> <a href='about-us.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; About Us </strong></span> </a> </li>     
-        </li>
+        <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>
+         <li class='active'> <a href='about-us.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; About Us </strong></span> </a> </li>
       </ul>
     </div>
   </div>
 </div>
-<!-- End main menu (top menu) -->
-<!-- Authenticating User to allow user to enter the assignments.html page, logged in -->
-<!-- End of login functionality -->
-<!-- Main Context Layer -->
-<div class="middleWrap">
-  <div id="main-layer-context-contact">
-    <!-- Main content -->
-    <div>
-      <h1 class="contacttitehead">Contact Us</h1>
-    </div>
-    <div id ="questions"><span>Hi! My name is</span>
-      <paper-input id="fullNameField" label="Full Name"></paper-input>
-      <span>My email address is</span>
-      <paper-input id="userEmailField" label="TimeM@gmail.com" ></paper-input>
-    </div>
-    <div id ="morequestions"><span>I'd like to talk about</span>
-      <paper-input id="commentsField"></paper-input>
-    </div>
-    <p><a id="contactUsButton" class="btn btn-lg btn-primary" href="#" role="button">Send!</a></p>
-  </div>
+<!-- Profile Content -->
+<div id="myCanvasProfile">
+  <div class="welcomeText"> Coming soon... <div class="line"> <hr/> </div></div>
+  <div class="sheDuleDiv"></div>
 </div>
+
+<!-- Footer starts here -->
 <!--<footer>
-  <div id="myCanvasContact">
+<div id="myCanvasContact">
     <div class="footer">
       <ul>
         <li><a href="index.html"><i class="ion-home"></i><span>Home</span></a></li>
-        <li><a href="contactus.html"><i class="ion-android-social"></i><span>Contact Us</span></a></li>
-        <li><a href= "howitworks.html"><i class="ion-help-buoy"></i><span>How it Works</span></a></li>
+        <li><a href="assignments.html"><i class="ion-android-social"></i><span>Assignments</span></a></li>
+        <li><a href="profile.html"><i class="ion-help-buoy"></i><span>Profile</span></a></li>
       </ul>
       <div class="ftTime"><a href="index.html">TimeM.com</a></div>
     </div>
@@ -93,10 +89,9 @@
     </div> 
   </div>
 </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/parse-1.2.19.min.js"></script>
-<script type="text/javascript" src="js/contactus.js" > </script>
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/bootstrap.min.js"></script>
+
+<!-- Footer ends here -->
+
 </body>
+<script type="text/javascript" src="js/toggle.js"></script>
 </html>
