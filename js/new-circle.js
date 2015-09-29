@@ -35,7 +35,13 @@ for (var j = 0; j < sortedSites.length; j++) {
 a = totTimeSpentonOtherSites;
 
 $(function(){
-  timeinsecs =a*60;  
+  timeinsecs =a*60;
+  //alert(timeinsecs);
+  //alert(timeinsecs);
+   //totSleepTimeRatio = 25200/7;
+  // alert(totSleepTimeRatio);
+ // totSleepTime = totSleepTimeRatio/100;
+// alert(totSleepTime);
   remsleeptime = 25200 - timeinsecs;
 	 if(timeinsecs==0){
 	   sleeptimecolor="#35d404";   
@@ -221,8 +227,16 @@ $(function(){
     };
     function pathMouseEnter(e) {
       var order = $(this).data().order;
-      $tip.text(data[order].title + ": " +(data[order].value/3600).toFixed(2) +" Hours")
-          .fadeIn(200);
+	  var secTime =3600;
+	 // var hr  = Math.floor(secTime / 6000);
+	  //alert(data[order].value);
+	  hours = Math.floor(data[order].value / 3600);
+	  totalSeconds = data[order].value % 3600;
+	  minutes = Math.floor(totalSeconds / 60);
+	  seconds = totalSeconds % 60;
+	  remTimeHrs = hours+":"+minutes;
+		alert(remTimeHrs);
+      $tip.text(data[order].title + ": " + remTimeHrs +" Hours").fadeIn(200);
       settings.onPathEnter.apply($(this),[e,data]);	 
     }
     function pathMouseLeave(e) {
@@ -328,3 +342,4 @@ function readCookie(name) {
     }
     return null;
 }
+
