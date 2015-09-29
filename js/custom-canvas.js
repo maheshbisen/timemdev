@@ -8,6 +8,10 @@ window.onload = function () {
 			fontSize: 25,
 			
 		},
+		axisY: {
+        title: "Minutes",
+        titleFontFamily:  "'Raleway', sans-serif"
+      },
 	  
                 animationEnabled: true,
 		data: [

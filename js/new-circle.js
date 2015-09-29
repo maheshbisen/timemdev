@@ -221,7 +221,7 @@ $(function(){
     };
     function pathMouseEnter(e) {
       var order = $(this).data().order;
-      $tip.text(data[order].title + ": " +(data[order].value/60).toFixed(2) +" Minutes")
+      $tip.text(data[order].title + ": " +(data[order].value/3600).toFixed(2) +" Hours")
           .fadeIn(200);
       settings.onPathEnter.apply($(this),[e,data]);	 
     }
