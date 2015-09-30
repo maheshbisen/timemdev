@@ -47,7 +47,7 @@ $(function(){
 // alert(totSleepTime);
   var v1 = sleepingHoursGl;
   var v2 = 43200 - sleepingHoursGl;
-  //alert(v1+"::"+v2);
+  alert(v1+"::"+v2);
   remsleeptime = v1 - timeinsecs;
 	 if(timeinsecs==0){
 	   sleeptimecolor="#35d404";   
