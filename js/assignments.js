@@ -1,5 +1,6 @@
 var timer = true;
-var firstStartClick = 0;
+var sleepingHoursGl = 0;
+var sleepStartTimeGl = 0;
 var hideInactiveAssignments = function(node) {
   $('html,body').animate({
     scrollTop: $(document).height()/4.5,
@@ -15,7 +16,6 @@ var hideInactiveAssignments = function(node) {
 
       var numberOfLetters = timeRemaining.length;
       var finalTimeWithSpaces="";
-
       for ( var i = 0; i < numberOfLetters; i ++ ) {
         if(timeRemaining[i] == timeRemaining[i]/1) {
             finalTimeWithSpaces= finalTimeWithSpaces + timeRemaining[i];
@@ -25,15 +25,13 @@ var hideInactiveAssignments = function(node) {
         }
       }
       //removes extra space
-
-var finalTime= parseInt(finalTimeWithSpaces.replace(/\s+/g, ''));
-
+      var finalTime= parseInt(finalTimeWithSpaces.replace(/\s+/g, ''));
       //callTimer("#mins", finalTime-1, 60);
       //var display = $(this);
       var display = $($(this).find('td')[1]);
       console.log(display);
       var seconds = 59;
-      document.cookie="assignmentTtime=" + finalTime; //Added Synsynoia
+	  document.cookie="assignmentTtime=" + finalTime; //Added Synsynoia
       startTimer(finalTime, seconds, display);
       console.log(finalTime);
     }
@@ -44,7 +42,6 @@ var finalTime= parseInt(finalTimeWithSpaces.replace(/\s+/g, ''));
 
 var showInactiveAssignments = function(node) {
   timer = false;
-  firstStartClick = 1;
   $("html, body").animate({
       scrollTop: 0
   }, 600);
@@ -58,31 +55,18 @@ var showInactiveAssignments = function(node) {
 
 // Timer function
 function startTimer(minutesRemaining, secondsRemaining, display) {
-timer = true;
-minutesRemaining = minutesRemaining.toString();
-
-if(firstStartClick ==1) {
-secondsRemaining = minutesRemaining.slice(-2);
-var minutesRemaining = minutesRemaining.substring(0, minutesRemaining.length - 2);
-}
-
-//Below code is for first time click on Start button.
-if(firstStartClick == 0 ) {
-minutesRemaining--; 
-firstStartClick = 1;
-}
-
+  minutesRemaining--;
   setInterval(function () {
     // actual minutes algorithm
+
     if(minutesRemaining > 0) {
       if(timer == true) {
         display.text(parseInt(minutesRemaining) + " : " + parseInt(secondsRemaining));
         secondsRemaining--;
         if(secondsRemaining < 0) {
           minutesRemaining--;
-          secondsRemaining = 59;
-          }
-
+          secondsRemaining = 60;
+        }
       } else {
         // do nothing
       }
@@ -268,7 +252,8 @@ $(document).ready(function(){
 	 //things to do after the save takes place
     };
 
-    var username = getUsername();
+    //var username = getUsername();
+	var username = getCookie("username");
     makeAssignmentList(username);
 
     var done= document.getElementById('done-button');
@@ -281,26 +266,24 @@ $(document).ready(function(){
     //Function to send settings data to Parse
     //Go to line 200 for reference
     $('#saveButton').on('click', function() {
+	  var username = getCookie("username");	
       console.log("button clicked");
-      var wakeUpHr = parseInt($('#wakeUpHR').val());
-      var wakeUpMin = parseInt($('#wakeUpMin').val());
-      var startWorkHr = parseInt($('#startWorkHr').val());
-      var startWorkMin = parseInt($('#startWorkMin').val());
-      var otherActivitiesHr = parseInt($('#extraHR').val());
-      var otherActivitiesMin = parseInt($('#extraMin').val());
+	  var sleepHour = parseInt($('#idsleepHour').val());
+      var sleepMinute = parseInt($('#idsleepMin').val());
+	  var sleepAmpm = $('#idsleepAmpm').val();
+      var wakeUpHr = parseInt($('#idwakeUpHR').val());	
+      var wakeUpMin = parseInt($('#idwakeUpMin').val()); 
+	  var wakeupAmpm = $('#idwakeupAmpm').val();
 
-      if($("#statusSleepCalculator").attr('aria-checked')=="false") {
-        var sleepCalculatorCheck = false;
-      } else {
-        var sleepCalculatorCheck = true;
-      }
 
-      console.log(wakeUpHr + " --> wake up time (hour)!");
+      console.log(sleepHour + " --> start work (hour)");
+      console.log(sleepMinute + " --> start work (min)");
+	  console.log(sleepAmpm + " --> ampm");
+	  console.log(wakeUpHr + " --> wake up time (hour)!");
       console.log(wakeUpMin + " --> wake up time (min)!");
-      console.log(startWorkHr + " --> start work (hour)");
-      console.log(startWorkMin + " --> start work (min)");
-      console.log(otherActivitiesHr + " --> other activities (hour)");
-      console.log(otherActivitiesMin + " --> other activities (min)");
+	  console.log(wakeupAmpm + " --> ampm");
+      //console.log(otherActivitiesHr + " --> other activities (hour)");
+      //console.log(otherActivitiesMin + " --> other activities (min)");
       console.log(username + " --> current user.");
 
       //Sending settings data to Parse
@@ -308,19 +291,22 @@ $(document).ready(function(){
       // Look for user's objectId in settings Class
       var objectId = new Parse.Query(SettingsId);
       objectId.equalTo("username", username);
+	  //alert(username);
       objectId.first({
         success: function(objectId) {
           var objectSettingsId = objectId.id;
           var settingsId = new SettingsId();
           settingsId.id = objectSettingsId;
-          settingsId.set("username", username);
+          //settingsId.set("username", username);
+		  settingsId.set("sleepHour", sleepHour);
+          settingsId.set("sleepMinute", sleepMinute);
+		  settingsId.set("sleepAmpm", sleepAmpm);
           settingsId.set("wakeUpHour", wakeUpHr);
           settingsId.set("wakeUpMinute", wakeUpMin);
-          settingsId.set("starkWorkHour", startWorkHr);
-          settingsId.set("startWorkMinute", startWorkMin);
-          settingsId.set("otherActivitiesHour", otherActivitiesHr);
-          settingsId.set("otherActivitiesMinute", otherActivitiesMin);
-          settingsId.set("sleepCalculatorCheck", sleepCalculatorCheck);
+		  settingsId.set("wakeupAmpm",  wakeupAmpm);
+          //settingsId.set("otherActivitiesHour", otherActivitiesHr);
+          //settingsId.set("otherActivitiesMinute", otherActivitiesMin);
+          //settingsId.set("sleepCalculatorCheck", sleepCalculatorCheck);
           settingsId.save(null, {
             success: function(settingsId) {
               console.log("Saved to Parse");
@@ -337,7 +323,7 @@ $(document).ready(function(){
     });
 
     $('#settingsButton').on('click', function(){
-      //Sending settings data to Parse
+										  
       var SettingsId = Parse.Object.extend("Settings");
       // Look for user's objectId in settings Class
       var objectId = new Parse.Query(SettingsId);
@@ -348,28 +334,20 @@ $(document).ready(function(){
           var SettingsData = Parse.Object.extend("Settings");
           var preSettingsData = new Parse.Query(SettingsData);
           preSettingsData.get(userId, {
-            success: function(userId) {
-              var wakeUpHourData = userId.get("wakeUpHour");
+            success: function(userId) {             
+              var sleepHourData = userId.get("sleepHour");
+              var sleepMinuteData = userId.get("sleepMinute");
+			  var sleepAmpmData = userId.get("sleepAmpm");
+			  var wakeUpHourData = userId.get("wakeUpHour");
               var wakeUpMinuteData = userId.get("wakeUpMinute");
-              var startWorkHourData = userId.get("starkWorkHour");
-              var starWorkMinuteData = userId.get("startWorkMinute");
-              var otherActivitiesHourData = userId.get("otherActivitiesHour");
-              var otherActivitiesMinuteData = userId.get("otherActivitiesMinute");
-              var sleepCalculatorCheckData = userId.get("sleepCalculatorCheck");
-              // append these values to actual settings button.
-              $('#wakeUpHR').val(wakeUpHourData);
-              $('#wakeUpMin').val(wakeUpMinuteData);
-              $('#startWorkHr').val(startWorkHourData);
-              $('#startWorkMin').val(starWorkMinuteData);
-              $('#extraHR').val(otherActivitiesHourData);
-              $('#extraMin').val(otherActivitiesMinuteData);
-              if(sleepCalculatorCheckData == true) {
-                console.log("true");
-                $('#statusSleepCalculator').attr("checked", "checked");
-              } else {
-                console.log("false");
-                $('#statusSleepCalculator').removeAttr("checked");
-              }
+			  var wakeupAmpmData = userId.get("wakeupAmpm");
+              //alert(wakeUpHourData+"--"+wakeUpMinuteData+"--"+sleepHourData+"--"+sleepMinuteData);			  
+			  $('#idsleepHour').val(sleepHourData+":00").attr("selected", "selected");
+			  $('#idsleepMin').val(sleepMinuteData).attr("selected", "selected");
+			  $('#idsleepAmpm').val(sleepAmpmData).attr("selected", "selected");
+			  $('#idwakeUpHR').val(wakeUpHourData+":00").attr("selected", "selected");
+			  $('#idwakeUpMin').val(wakeUpMinuteData).attr("selected", "selected");
+			  $('#idwakeupAmpm').val(wakeupAmpmData).attr("selected", "selected");
             },
             error: function(userId) {
               console.log(error + " --> incorrect. MUST FIX!");
@@ -381,10 +359,100 @@ $(document).ready(function(){
         }
       });
     });
+	
+	//get settings attributes starts here
+      var SettingsId = Parse.Object.extend("Settings");
+      // Look for user's objectId in settings Class
+      var objectId = new Parse.Query(SettingsId);
+      objectId.equalTo("username", username);
+      objectId.first({
+        success: function(objectId) {
+          var userId = objectId.id;
+          var SettingsData = Parse.Object.extend("Settings");
+          var preSettingsData = new Parse.Query(SettingsData);
+          preSettingsData.get(userId, {
+            success: function(userId) {             
+              var sleepHourData = userId.get("sleepHour");
+              var sleepMinuteData = userId.get("sleepMinute");
+			  var sleepAmpmData = userId.get("sleepAmpm");
+			  var wakeUpHourData = userId.get("wakeUpHour");
+              var wakeUpMinuteData = userId.get("wakeUpMinute");
+			  var wakeupAmpmData = userId.get("wakeupAmpm");
+              //alert(wakeUpHourData+"--"+wakeUpMinuteData+"--"+sleepHourData+"--"+sleepMinuteData);			  
+			  $('#idsleepHour').val(sleepHourData+":00").attr("selected", "selected");
+			  $('#idsleepMin').val(sleepMinuteData).attr("selected", "selected");
+			  $('#idsleepAmpm').val(sleepAmpmData).attr("selected", "selected");
+			  $('#idwakeUpHR').val(wakeUpHourData+":00").attr("selected", "selected");
+			  $('#idwakeUpMin').val(wakeUpMinuteData).attr("selected", "selected");
+			  $('#idwakeupAmpm').val(wakeupAmpmData).attr("selected", "selected");
+			  var timeSetsArr = {"8:00": 0.85, "8:15": 0.875, "8:30": 0.9,"8:45": 0.925, "9:00": 1, "9:15": 1.06,"9:30": 1.1, "9:45": 1.16,"10:00": 1.2, "10:15": 1.25, "10:30": 1.3,"10:45": 1.4, "11:00": 1.5, "11:15": 1.6,"11:30": 1.7, "11:45": 1.8,"12:00": 2, "12:15": 2.2, "12:30": 2.4,"12:45": 2.6, "1:00": 3, "1:15": 3.2,"1:30": 3.4, "1:45": 3.6};	  
+			
+			  var sleepStartTime = sleepHourData+":"+sleepMinuteData;
+			  sleepStartTimeGl = timeSetsArr[sleepStartTime];
+			  //alert(sleepingHoursGl);
+			  sleepingHoursGl = sleepStartTime;
+			  if(sleepHourData <12 && sleepAmpmData=='pm' ){
+				var hours1 = 11 - parseInt(sleepHourData) ;
+				if(wakeupAmpmData=="am"){
+					actHours = hours1 + parseInt(wakeUpHourData);
+				}
+				var extraHourCheck = (sleepMinuteData+wakeUpMinuteData)/60;
+				//alert(actHours);
+				if(extraHourCheck>=1){
+					actHours = actHours+1;
+					mins = (sleepMinuteData+wakeUpMinuteData)%60;
+				}else{
+					mins = sleepMinuteData+wakeUpMinuteData;
+				}
+				
+			  }else{
+				actHours = wakeUpHourData - sleepHourData;
+				var extraHourCheck = (sleepMinuteData+wakeUpMinuteData)/60;
+				if(extraHourCheck>=1){
+					actHours = actHours+1;
+					mins = (sleepMinuteData+wakeUpMinuteData)%60;
+				}else{
+					mins = sleepMinuteData+wakeUpMinuteData;
+				}
+			  }
+			  //sleepingHoursGl = actHours+":"+mins;
+			  var secs1 = actHours*60*60;
+			  var secs2 = mins*60;
+			  sleepingHoursGl = secs1+secs2;
+			  //alert(sleepingHoursGl);
+			  document.cookie="slHourCk=" + sleepingHoursGl;
+			  document.cookie="slStratTimeCk=" + timeSetsArr[sleepStartTime];
+			  //alert(actHours+":"+mins);
+			 // var startSleepTime = sleepStartTime.; var endSleepTime= wakeUpMorTime;			 
+			  // s = startSleepTime.split(':');
+			  // e = endSleepTime.split(':');
+			   // alert(s);
+			   //min = e[1]-s[1];
+			   //hour_carry =24;if(min <0){
+				   //min +=60;
+				   //hour_carry +=1;}
+			  //hour = e[0]-s[0]-hour_carry;
+			  //min =((min/60)*100).toString()
+			  // diff = hour +":"+ min.substring(0,2);
+			  //alert(diff);
+            },
+            error: function(userId) {
+              console.log(error + " --> incorrect. MUST FIX!");
+            }
+          });
+        },
+        error: function(error) {
+          console.log(error + " --> error");
+        }
+      });
+
+	//get settings attributes ends here
 });
 
 //added by synsynoia
 function getCookie(name) {
+	//alert("In Coockie:"+name);
+	//alert(document.cookie);
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {

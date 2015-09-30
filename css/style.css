@@ -42,7 +42,7 @@ background-color: rgba(95, 158, 160, 0.5);
     font-family: 'Raleway', sans-serif;
 	letter-spacing: 0.03em;
 	font-size: 55px;
-	max-width:300px;
+	max-width:220px;
 	width:100%;
 	float:left;
 }
@@ -76,7 +76,7 @@ background-color: rgba(95, 158, 160, 0.5);
 #cssmenu {
 	/* drop down menu */
               /* This is for the main menu bit at the top */
-    max-width:800px;            /* This means on every screen no matter the size, the width will cover the top  */
+    max-width:850px;            /* This means on every screen no matter the size, the width will cover the top  */
 	line-height: normal;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.0);
@@ -88,6 +88,7 @@ background-color: rgba(95, 158, 160, 0.5);
 }
 #cssmenu > ul {
 	text-align:center;
+	margin-top:13px;
 }
 #cssmenu > ul > li {
 	display:inline;/* margin-left: 15px;   */    /* This is when the drop down box appears *//* position: relative;*/
@@ -95,10 +96,10 @@ background-color: rgba(95, 158, 160, 0.5);
 #cssmenu > ul > li > a {
 	color: rgb(255, 255, 255);
 	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	letter-spacing: 0.16em;
 	line-height: 70px;      /* This bit chances the size of the text on the main heading */
-	padding: 15px 20px;     /* This is the padding between the different titles */
+	padding: 15px 12px;     /* This is the padding between the different titles */
  -webkit-transition: color .15s;
  -moz-transition: color .15s;
  -o-transition: color .15s;
@@ -196,6 +197,7 @@ background-color: rgba(95, 158, 160, 0.5);
 	background-color: rgb(114,164,65);
 	color: rgb(240,240,240);
 }
+#cssmenu ul li a span strong { margin-left:5px }
 .middleWrap {
 	max-width: 1100px;
 	width:100%;
@@ -870,10 +872,10 @@ paper-button #icon {
 	clear:both;
 }
 .lock {
-	background-image: url(../images/lock.png);
-	background-size: 60px;
-	height: 60px;
-	width: 60px;
+	background-image: url(../images/icon-lock.png);
+	background-size: 40px;
+	height: 40px;
+	width: 40px;
 	vertical-align:middle;
 }
 .dailyShedule {
@@ -961,7 +963,7 @@ paper-button #icon {
 }*/
 #userinput {
 	color: white !important;
-	font-size: 33px;
+	font-size: 30px;
 	text-align: center;
 }
 #inputContainer input[type="text"] {
@@ -1782,6 +1784,7 @@ border-radius:50%;
   letter-spacing: .06em;
   box-shadow: 0 1px 3px rgba(0,0,0,0.5);
   pointer-events: none;
+  display:block;
   &::after {
       position: absolute;
       left: 50%;
@@ -1793,6 +1796,7 @@ border-radius:50%;
       border-left: 5px solid transparent;
       border-top: 6px solid rgba(0,0,0,.7);
       line-height: 0;
+	   display:block;
   }
 }
 .doughnutTipNew {

@@ -2,6 +2,17 @@ $(document).ready(function () {
 	Parse.initialize("LcQYRvseB9ExXGIherTt1v2pw2MVzPFwVXfigo11", "F5enB5XfOfqo4ReAItZCkJVxOY76hoveZrOMwih9");
 	$("#signUp").on("click", function(e){
 		e.preventDefault();
+		
+		 if($.trim($('#inputUsername').val())==''){
+				alert('Error:- Please enter email address.');		
+				$('#inputUsername').focus();
+				return false;
+			}else if(!IsValidEmail($.trim(jQuery('#inputUsername').val()))){
+				alert('Error:- Please enter valid email address.');		
+				$('#inputUsername').focus();
+				return false;
+			}
+		
 		if($('#inputPassword').val() == $('#retypePassword').val()) {
 			newUser($("#inputUsername").val(), $("#inputPassword").val());
 		} else {
@@ -17,7 +28,7 @@ $(document).ready(function () {
 	// This function adds user to Parse
 	var newUser = function (username, password){
 		var user = new Parse.User();
-		user.set("username", username);
+		user.set("username", username);		
 		user.set("password", password);
 
 		user.signUp(null, {
@@ -39,8 +50,8 @@ $(document).ready(function () {
 		  username: username,
 		  wakeUpHour: 0,
 		  wakeUpMinute: 0,
-		  starkWorkHour: 0,
-		  startWorkMinute: 0,
+		  sleepHour: 0,
+		  sleepMinute: 0,
 		  otherActivitiesHour: 0,
 		  otherActivitiesMinute: 0,
 		  sleepCalculatorCheck: true
@@ -70,3 +81,10 @@ $(document).ready(function () {
 		return false;
 	});
 });
+
+// Valid Email  Function
+function IsValidEmail(strValue){
+	//var objRegExp =/(^[a-z0-9]([a-z0-9_\.]*)@([a-z0-9_\-\.]*)([.][a-z]{3})$)|(^[a-z0-9]([a-z0-9_\.]*)@([a-z0-9_\-\.]*)(\.[a-z]{2,3})(\.[a-z]{2})*$)/i;
+	var objRegExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	return objRegExp.test(strValue);
+}

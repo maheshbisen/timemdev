@@ -1,5 +1,8 @@
 <!-- Mahesh Script starts -->
-var devStartRad =1.5;
+sleepingHoursGl = readCookie("slHourCk");
+sleepStartTimeGl = readCookie("slStratTimeCk");
+//alert(sleepingHoursGl+"::"+sleepStartTimeGl);
+var devStartRad =sleepStartTimeGl;
 var totAssTime = readCookie("assignmentTtime");
 var totTimeSpentonOtherSites = 0;
 var sortedSites = JSON.parse(readCookie("SiteDetailsStr"));
@@ -42,7 +45,10 @@ $(function(){
   // alert(totSleepTimeRatio);
  // totSleepTime = totSleepTimeRatio/100;
 // alert(totSleepTime);
-  remsleeptime = 25200 - timeinsecs;
+  var v1 = sleepingHoursGl;
+  var v2 = 43200 - sleepingHoursGl;
+  //alert(v1+"::"+v2);
+  remsleeptime = v1 - timeinsecs;
 	 if(timeinsecs==0){
 	   sleeptimecolor="#35d404";   
 	  }else if(timeinsecs<=3600){
@@ -53,21 +59,24 @@ $(function(){
   $("#doughnutChart").drawDoughnutChart([
     { title: "Time spent on browsing", value :timeinsecs,  color: "#969696" },
     { title: "Remaining sleep time", value:  remsleeptime,   color: sleeptimecolor},
-    { title: "",    value:  18000,   color: "#ffffff" } 
+    { title: "",    value:  v2,   color: "#ffffff" } 
    
   ]);
+  
+    $("#doughnutChartnew").drawDoughnutChart([
+    { title: "Fours Hrs", value: 25200,  color: "#4f81bd" },
+    { title: "Two Hrs", value:  18000,   color: "#ffffff" }
+	
+   
+  ]);
+	
 });
 
 $(function(){
 	 fifteenmin=25200,
 	 twohrs =18000
 	 
-  $("#doughnutChartnew").drawDoughnutChart([
-    { title: "Fours Hrs", value :fifteenmin,  color: "#4f81bd" },
-    { title: "Two Hrs", value:  twohrs,   color: "#ffffff" }
-	
-   
-  ]);
+
 });
 /*!
  * jquery.drawDoughnutChart.js
@@ -235,7 +244,7 @@ $(function(){
 	  minutes = Math.floor(totalSeconds / 60);
 	  seconds = totalSeconds % 60;
 	  remTimeHrs = hours+":"+minutes;
-		alert(remTimeHrs);
+		//alert(remTimeHrs);
       $tip.text(data[order].title + ": " + remTimeHrs +" Hours").fadeIn(200);
       settings.onPathEnter.apply($(this),[e,data]);	 
     }

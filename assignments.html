@@ -43,14 +43,16 @@
   <!-- Nav Bar(top menu) ====================================================-->
   <div class="headerWrap">
     <div id="fixedNav">
-      <div id='header_top_left' class="active"> <a href = "profile.html"> TimeM </a> </div>
+      <div id='header_top_left' class="active"><a href ="index.html">TimeM</a></div>
       <div id='cssmenu'>
         <ul>
-          <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong> &nbsp; How it works </strong></span> </a> </li>
-          <li class='active'> <a href='assignments.html'> <span class = 'howitworks'><i class="ion-podium"></i><strong> &nbsp; Assignments </strong></span> </a> </li>
-          <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>
+          <li class='active'> <a href='about-us.html'> <span class = 'howitworks'><i class="ion-person"></i><strong>About Us</strong></span> </a> </li>
+          <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong>How it works</strong></span></a></li>
+           <li class='active'> <a href='profile.html'> <span class = 'aboutus'><i class="ion-ios7-pulse-strong"></i><strong>Profile</strong></span> </a> </li>
+          <li class='active'> <a href='assignments.html'> <span class = 'howitworks'><i class="ion-podium"></i><strong>Assignments</strong></span> </a> </li>
+          <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong>Contact Us</strong></span> </a> </li>
           <li>
-            <paper-button class="lock" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
+            <paper-button class = "lock" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button>
           </li>
         </ul>
       </div>
@@ -71,96 +73,65 @@
     <!-- Wake Up time input -->
     <div class="wakeUpHeading">Bed Time:</div>
     <div class="wakeupDiv">
-      <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
-        <option value="off">OFF</option>
-        <option value="1">1:00</option>
-        <option value="2">2:00</option>
-        <option value="3">3:00</option>
-        <option value="4">4:00</option>
-        <option value="5">5:00</option>
-        <option value="6">6:00</option>
-        <option value="7">7:00</option>
-        <option value="8">8:00</option>
-        <option value="9">9:00</option>
-        <option value="10">10:00</option>
-        <option value="11">11:00</option>
-        <option value="12">12:00</option>
+     <select id="idsleepHour"  name="startwork_hour" title="Start Work Hour" class="wakeUpHour">
+        <option value="off">OFF</option>      
+        <option value="1:00">1:00</option>
+        <option value="2:00">2:00</option>
+        <option value="3:00">3:00</option>
+        <option value="4:00">4:00</option>
+        <option value="5:00">5:00</option>
+        <option value="6:00">6:00</option>
+        <option value="7:00">7:00</option>
+        <option value="8:00">8:00</option>
+        <option value="9:00">9:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
       </select>
       <div class="dot">:</div>
-      <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
+      <select  id="idsleepMin" name="startwork_minute" title="Start Work Minute" class="wakeUpMinutes">
         <option value="0">00</option>
-        <option value="1">15</option>
-        <option value="2">30</option>
-        <option value="3">45</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
       </select>
-       <div class="dot">:</div>
-      <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
+      <div class="dot">:</div>
+      <select id="idsleepAmpm" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
         <option value="am">Am</option>
         <option value="pm">Pm</option>
       </select>
     </div>
     <div class="wakeUpHeading">Wake Up Time:</div>
     <div class="wakeupDiv">
-      <select id="wakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
+    <select id="idwakeUpHR" name="alarm_hour" title="Alarm Hour" class="wakeUpHour">
         <option value="off">OFF</option>
         <option value="1">1:00</option>
-        <option value="2">2:00</option>
-        <option value="3">3:00</option>
-        <option value="4">4:00</option>
-        <option value="5">5:00</option>
-        <option value="6">6:00</option>
-        <option value="7">7:00</option>
-        <option value="8">8:00</option>
-        <option value="9">9:00</option>
-        <option value="10">10:00</option>
-        <option value="11">11:00</option>
-        <option value="12">12:00</option>
+        <option value="2:00">2:00</option>
+        <option value="3:00">3:00</option>
+        <option value="4:00">4:00</option>
+        <option value="5:00">5:00</option>
+        <option value="6:00">6:00</option>
+        <option value="7:00">7:00</option>
+        <option value="8:00">8:00</option>
+        <option value="9:00">9:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
       </select>
       <div class="dot">:</div>
-      <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
+      <select id="idwakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
         <option value="0">00</option>
-        <option value="1">15</option>
-        <option value="2">30</option>
-        <option value="3">45</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
       </select>
-       <div class="dot">:</div>
-      <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
+      <div class="dot">:</div>
+      <select id="idwakeupAmpm" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
         <option value="am">Am</option>
         <option value="pm">Pm</option>
       </select>
-    </div>
-   <!-- <div class="startTimeWork">When I will start on homework:</div>
-    <div class="wakeupDiv">
-      <select id="startWorkHr" name="startwork_hour" title="Start Work Hour" class="startWorkHour">
-        <option value="off">OFF</option>
-        <option value="1">1:00</option>
-        <option value="2">2:00</option>
-        <option value="3">3:00</option>
-        <option value="4">4:00</option>
-        <option value="5">5:00</option>
-        <option value="6">6:00</option>
-        <option value="7">7:00</option>
-        <option value="8">8:00</option>
-        <option value="9">9:00</option>
-        <option value="10">10:00</option>
-        <option value="11">11:00</option>
-        <option value="12">12:00</option>
-      </select>
-      <select id="startWorkMin" name="startwork_minute" title="Start Work Minute" class="startWorkMin">
-        <option value="0">00</option>
-        <option value="1">15</option>
-        <option value="2">30</option>
-        <option value="3">45</option>
-      </select>
-      <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
-        <option value="am">Am</option>
-        <option value="pm">Pm</option>
-      </select>
-    </div>-->
-   <!-- <div class="chekbox-correct">
-      <paper-checkbox id="statusSleepCalculator" role="checkbox" tabindex="0" aria-checked="false" checked=""></paper-checkbox>
-    </div>
-    <div class="sleepCalcTitle"> <strong> Turn On Sleep Calculator? </strong> </div>-->
+     
+    </div>   
     <div class="btnSett"> <a id="cancel" class="cancelBtn" >CANCEL</a></div>
     <paper-button id="saveButton"label="Save" class="saveButtonnone"   onclick="document.querySelector('#toast1').show()"></paper-button>
     <paper-toast id="toast1" text="Your selections have been saved."></paper-toast>
@@ -226,10 +197,11 @@
     <div class="ftrlogoimg"><img src="footerMain\img\favicon.png"></div>
     <div class="footerMenuList">
       <ul>
-        <li><a href="index.html" target="_top"> Home</a></li>
-        <li><a href="profile.html" target="_top"> Profile</a></li>
-        <li><a href="assignments.html" target="_top"> Assignments</a></li>
+        <li><a href="index.html" target="_top">Home</a></li>
+        <li><a href="about-us.html" target="_top">About Us</a></li>
         <li><a href="howitworks.html" target="_top">How to use it</a></li>
+        <li><a href="profile.html" target="_top">Profile</a></li>
+        <li><a href="assignments.html" target="_top">Assignments</a></li>
         <li><a href="contactus.html" target="_top">Contact Us</a></li>
       </ul>
     </div>
@@ -255,11 +227,16 @@
 <script type="text/javascript">
  $(document).ready(function() {
    toggleDialog('paper-dialog-transition-center');
+   //$.getScript("js/new-circle.js");
  });
  
  	$('#cancel').click(function(){
 		$('.setting').hide();
 	 
 	});
+function selectSetting() {
+    document.getElementById("wakeUpHR").selectedIndex = "0";
+}
+
 </script>
 </html>

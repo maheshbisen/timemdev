@@ -1,5 +1,3 @@
-
-
 	var logout = function(){
 		 
 		var cookies = document.cookie.split(";");
@@ -15,7 +13,3 @@
 	}
 	
 //cancel script	   
-	$('#cancel').click(function(){
-		$('.setting').hide();
-	 
-	});

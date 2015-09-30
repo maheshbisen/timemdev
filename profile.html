@@ -40,12 +40,14 @@ Time for students for the next years classes-->
 <!-- Nav Bar(top menu) ====================================================-->
 <div class="headerWrap">
   <div id="fixedNav">
-    <div id='header_top_left' class="active"> <a href ="profile.html"> TimeM </a> </div>
+    <div id='header_top_left' class="active"> <a href ="index.html">TimeM</a> </div>
     <div id='cssmenu'>
       <ul>
-        <li class='active'> <a href='profile.html'> <span class = 'aboutus'><i class="ion-ios7-pulse-strong"></i><strong> &nbsp; Profile </strong></span> </a> </li>
-        <li class='active'> <a href='assignments.html'> <span class = 'howitworks'><i class="ion-podium"></i><strong> &nbsp; Assignments </strong></span> </a> </li>
-         <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong> &nbsp; Contact Us </strong></span> </a> </li>            
+      <li class='active'> <a href='about-us.html'> <span class = 'howitworks'><i class="ion-person"></i><strong>About Us</strong></span> </a> </li>
+        <li class='active'> <a href='howitworks.html'> <span class = 'howitworks'><i class="ion-help-buoy"></i><strong>How it works</strong></span></a></li>        
+        <li class='active'> <a href='profile.html'> <span class = 'aboutus'><i class="ion-ios7-pulse-strong"></i><strong>Profile</strong></span> </a> </li>
+        <li class='active'> <a href='assignments.html'> <span class = 'howitworks'><i class="ion-podium"></i><strong>Assignments</strong></span> </a></li>
+         <li class='active'> <a href='contactus.html'> <span class = 'contactus'><i class="ion-android-social"></i><strong>Contact Us</strong></span> </a></li>            
         <li><paper-button class = "lock" onclick="toggleDialog('paper-dialog-transition-center')"></paper-button></li>
       </ul>
     </div>
@@ -80,19 +82,20 @@ Time for students for the next years classes-->
     <div class="ftrlogoimg"><img src="footerMain\img\favicon.png"></div>
     <div class="footerMenuList">
       <ul>
-        <li ><a href="index.html" target="_top"> Home</a></li>
-        <li><a href="profile.html" target="_top"> Profile</a></li>
-        <li><a href="assignments.html" target="_top"> Assignments</a></li>
+        <li><a href="index.html" target="_top">Home</a></li>
+        <li><a href="about-us.html" target="_top">About Us</a></li>
         <li><a href="howitworks.html" target="_top">How to use it</a></li>
+        <li><a href="profile.html" target="_top">Profile</a></li>
+        <li><a href="assignments.html" target="_top">Assignments</a></li>
         <li><a href="contactus.html" target="_top">Contact Us</a></li>
       </ul>
     </div>
     <div class="footerMenucontactList">
-    <ul>
-    	<li class="contacUstext">Contact Us</li>
+      <ul>
+        <li class="contacUstext">Contact Us</li>
         <li><a href="mailto:TIMEM@GMAIL.COM">TIMEM@GMAIL.COM</a></li>
-    </ul>	
-    </div> 
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -129,6 +132,7 @@ Time for students for the next years classes-->
     <option value="23">11 PM</option>
     <option value="0">12 AM</option>
   </select> 
+   <div class="dot">:</div>
   <select id="wakeUpMin" name="alarm_minute" title="Alarm Minute" class="wakeUpMinutes">
     <option value="0">00</option>
     <option value="1">01</option>
@@ -211,7 +215,8 @@ Time for students for the next years classes-->
     <option value="9">9hr</option>
     <option value="10">10hr</option>
   </select>
-   <div class="and"> <strong>& </strong> </div>
+  <!-- <div class="and"> <strong>& </strong> </div>-->
+    <div class="dot">:</div>
 
   <select id="extraMin"name="other_activites_minutes" title="Activities Minute">
     <option value="0">00 min</option>
