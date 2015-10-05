@@ -59,13 +59,17 @@
     </div>
   </div>
   <div id="status">
-    <div id="doughnutChartnew" class="chart chartFullDiv"></div>
-    <div id="doughnutChart" class="chart chartTimeDiv">
-      <div class="watchInner">
-        <SCRIPT LANGUAGE="JavaScript">var clocksize='200';</SCRIPT>
-        <SCRIPT SRC="js/clock.js"></SCRIPT>
-      </div>
+  <div id="doughnutCircleFirst" class="chart chartFullDiv"></div>
+    <div id="doughnutCircleSecond" class="chart chartTimeDiv"></div>
+      <div id="doughnutCircleThird" class="chart chartThirdDiv"></div>
+      <div class="watchInner">  
+   <div id="clockWatch">
+    <div id="hourWatch" style="transform: rotate(334.5deg);"><img src="images/ico-hourhand.png"></div>
+    <div id="minuteWatch" style="transform: rotate(54deg);"><img src="images/ico-minhand.png"></div>
+    <div id="secondWatch" style="transform: rotate(108deg);"><img src="images/ico-sechand.png"></div>
+</div>
     </div>
+   
   </div>
   <div class="clr"></div>
   <!-- Polymer dialog ======================================================================================-->
@@ -217,11 +221,13 @@
 <script type="text/javascript" src="js/toggle.js"></script>
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.min.js"></script>
+<script src="js/watch.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- End of login functionality -->
 <script type="text/javascript" src="js/parse-1.2.19.min.js"></script>
 <script type="text/javascript" src="js/assignments.js"></script>
 <script type="text/javascript" src="js/new-circle.js"></script>
+<script type="text/javascript" src="js/new-study-circle.js"></script>
 <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
 <script type="text/javascript" src="js/custom-canvas.js"></script>
 <script type="text/javascript">
@@ -237,6 +243,9 @@
 function selectSetting() {
     document.getElementById("wakeUpHR").selectedIndex = "0";
 }
+
+//start watch
+
 
 </script>
 </html>
